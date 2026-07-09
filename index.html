@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Invoice Generator — Create &amp; Download PDF Invoices | Invoice-Generator.com.au</title>
+  <meta name="description" content="Free invoice generator with instant PDF download. No signup, no watermark, no ads. Add your logo, tax, discounts and payment details — create a professional invoice in under a minute.">
+  <link rel="canonical" href="https://invoice-generator.com.au/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://invoice-generator.com.au/">
+  <meta property="og:title" content="Free Invoice Generator — Create &amp; Download PDF Invoices">
+  <meta property="og:description" content="Create a professional invoice and download it as a PDF in under a minute. Free forever — no signup, no watermark, no ads.">
+  <meta property="og:site_name" content="Invoice-Generator.com.au">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Invoice Generator",
+    "url": "https://invoice-generator.com.au/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "AUD" },
+    "description": "Free online invoice generator. Create professional invoices with your logo, tax, discounts and payment details, then download as PDF. No signup required.",
+    "featureList": "PDF download, logo upload, GST and tax calculation, discounts, multiple currencies, automatic saving, no watermark, no signup"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this invoice generator really free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free with no catches. There is no signup, no watermark on your PDF, no monthly limit on how many invoices you can create, and no ads. Fill in the invoice and download it." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account to download my invoice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Unlike most invoice tools, you never need an account or an email address. Click Download PDF and the file saves straight to your device." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my invoice data private?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything you type stays in your browser — your invoice data is never uploaded to our servers. The PDF is generated on your own device, and your details are saved locally so your next invoice is prefilled." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I add my business logo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click the logo box at the top of the invoice, or drag and drop an image file onto it. PNG and JPG both work, and the logo appears on your downloaded PDF." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I add tax or GST to an invoice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Set the tax rate in the totals section — for Australian GST use 10%. You can rename the tax label (GST, VAT, Sales Tax) and choose whether your prices are tax-inclusive or tax-exclusive. The tax amount is calculated and shown automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "What file format is the invoice downloaded in?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Invoices download as a PDF, the standard format for sending invoices by email. You can also use the Print option to print directly or save via your browser's print dialog." }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I number my invoices?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use a simple sequential series such as INV-0001, INV-0002 and never reuse a number. When you click New Invoice, the tool automatically increments your invoice number for you." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I record a partial payment or deposit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter the amount already received in the Amount Paid field and the invoice shows the remaining Balance Due — useful for deposits and progress payments." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="has-tool">
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/" aria-label="Invoice-Generator.com.au home">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="3" y="1.5" width="20" height="23" rx="3" fill="#10715a"/><rect x="7" y="7" width="12" height="2" rx="1" fill="#fff"/><rect x="7" y="11.5" width="12" height="2" rx="1" fill="#fff" opacity="0.7"/><rect x="7" y="16" width="7" height="2" rx="1" fill="#fff" opacity="0.7"/></svg>
+        invoice-generator<span class="tld">.com.au</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/" class="active">Invoice Generator</a>
+        <a href="/invoice-generator-australia/">Australia (Tax Invoice)</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Invoice Generator</h1>
+    <p class="sub">Create a professional invoice and download it as a PDF in under a minute. Free forever — the way an invoice generator should be.</p>
+    <ul class="trust">
+      <li>No signup</li>
+      <li>No watermark</li>
+      <li>No ads</li>
+      <li>Unlimited invoices</li>
+      <li>Data stays on your device</li>
+    </ul>
+  </section>
+
+  <main class="generator">
+
+    <section class="invoice-paper" aria-label="Invoice editor">
+      <div class="inv-top">
+        <div class="logo-drop" id="logo-drop" role="button" tabindex="0" aria-label="Upload your logo">
+          <span class="logo-hint">+ Add your logo<br><small>click or drag &amp; drop</small></span>
+          <img id="logo-img" alt="Business logo">
+          <button type="button" class="logo-remove" title="Remove logo" aria-label="Remove logo">×</button>
+          <input type="file" id="logo-file" accept="image/*" hidden>
+        </div>
+        <div class="inv-title-block">
+          <input type="text" class="doc-title" id="doc-title" value="INVOICE" aria-label="Document title">
+          <div class="inv-number-row">
+            <label for="inv-number">#</label>
+            <input type="text" id="inv-number" aria-label="Invoice number">
+          </div>
+        </div>
+      </div>
+
+      <div class="inv-parties">
+        <div>
+          <span class="field-label">From</span>
+          <input type="text" id="from-name" placeholder="Your name or business name" autocomplete="organization">
+          <textarea id="from-details" rows="3" placeholder="Address, email, phone"></textarea>
+        </div>
+        <div>
+          <span class="field-label">Bill To</span>
+          <input type="text" id="to-name" placeholder="Client name or business">
+          <textarea id="to-details" rows="3" placeholder="Client address, email"></textarea>
+        </div>
+      </div>
+
+      <div class="inv-meta">
+        <div>
+          <span class="field-label">Issue date</span>
+          <input type="date" id="issue-date">
+        </div>
+        <div>
+          <span class="field-label">Due date</span>
+          <input type="date" id="due-date">
+        </div>
+        <div>
+          <span class="field-label">Reference / PO</span>
+          <input type="text" id="reference" placeholder="Optional">
+        </div>
+      </div>
+
+      <table class="items-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th class="col-qty">Qty</th>
+            <th class="col-rate">Rate</th>
+            <th class="col-amount">Amount</th>
+            <th class="col-del"><span class="sr-only"></span></th>
+          </tr>
+        </thead>
+        <tbody id="items-body"></tbody>
+      </table>
+      <button type="button" class="add-item" id="add-item">+ Add line item</button>
+
+      <div class="inv-bottom">
+        <div class="inv-notes">
+          <div>
+            <span class="field-label">Payment details</span>
+            <textarea id="pay-details" rows="3" placeholder="Bank name, account details, PayPal, or payment link"></textarea>
+          </div>
+          <div>
+            <span class="field-label">Notes</span>
+            <textarea id="notes" rows="2" placeholder="Thank you for your business!"></textarea>
+          </div>
+          <div>
+            <span class="field-label">Terms</span>
+            <textarea id="terms" rows="2" placeholder="e.g. Payment due within 14 days"></textarea>
+          </div>
+        </div>
+
+        <div class="totals">
+          <div class="totals-row">
+            <span class="t-label">Subtotal</span>
+            <span class="t-value" id="v-subtotal">$0.00</span>
+          </div>
+          <div class="totals-row">
+            <span class="t-label">Discount</span>
+            <span class="t-input">
+              <input type="number" id="discount-value" min="0" step="any" placeholder="0">
+              <select id="discount-type" aria-label="Discount type">
+                <option value="percent">%</option>
+                <option value="flat">flat</option>
+              </select>
+            </span>
+            <span class="t-value" id="v-discount">$0.00</span>
+          </div>
+          <div class="totals-row">
+            <span class="t-label tax-inline">
+              <input type="text" id="tax-label" value="Tax" aria-label="Tax label">
+              <input type="number" id="tax-rate" min="0" step="any" value="0" aria-label="Tax rate percent">%
+            </span>
+            <span class="t-value"><small id="tax-mode-note"></small> <span id="v-tax">$0.00</span></span>
+          </div>
+          <div class="totals-row">
+            <span class="t-label">Shipping</span>
+            <span class="t-input"><input type="number" id="shipping" min="0" step="any" placeholder="0"></span>
+            <span class="t-value" id="v-shipping">$0.00</span>
+          </div>
+          <div class="totals-row grand">
+            <span class="t-label">Total</span>
+            <span class="t-value" id="v-total">$0.00</span>
+          </div>
+          <div class="totals-row">
+            <span class="t-label">Amount paid</span>
+            <span class="t-input"><input type="number" id="amount-paid" min="0" step="any" placeholder="0"></span>
+          </div>
+          <div class="totals-row balance">
+            <span class="t-label">Balance due</span>
+            <span class="t-value" id="v-balance">$0.00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side-panel" aria-label="Invoice settings and actions">
+      <div class="panel-card">
+        <div class="btn-row">
+          <button type="button" class="btn btn-primary js-download">⬇ Download PDF</button>
+          <button type="button" class="btn btn-ghost" id="btn-print">Print</button>
+          <button type="button" class="btn btn-ghost" id="btn-new">New invoice</button>
+        </div>
+        <p class="autosave-note" id="autosave-note">Your invoice saves automatically in your browser</p>
+      </div>
+      <div class="panel-card">
+        <h2>Settings</h2>
+        <div class="panel-field">
+          <label for="currency">Currency</label>
+          <select id="currency"></select>
+        </div>
+        <label class="check-field" for="tax-inclusive">
+          <input type="checkbox" id="tax-inclusive">
+          Prices include tax
+        </label>
+      </div>
+    </aside>
+  </main>
+
+  <div class="mobile-download">
+    <button type="button" class="btn btn-primary js-download">⬇ Download PDF</button>
+  </div>
+
+  <article class="content">
+    <h2>How to create an invoice online</h2>
+    <p class="lead">This free invoice generator works like a piece of paper: you type straight onto the invoice, the totals calculate themselves, and the finished document downloads as a PDF. Here's the whole process:</p>
+    <ol class="steps">
+      <li><strong>Add your business details</strong>Enter your name or business name, address and contact details in the <em>From</em> section, and upload your logo if you have one. These details are saved in your browser, so you only type them once.</li>
+      <li><strong>Add your client</strong>Fill in who the invoice is for under <em>Bill To</em>, set the issue date and a due date, and add a reference or purchase order number if your client requires one.</li>
+      <li><strong>List what you're charging for</strong>Add a line for each product or service with a quantity and rate. The amounts, subtotal, tax and total are calculated for you — no spreadsheet needed.</li>
+      <li><strong>Set tax, discounts and payment details</strong>Apply a percentage or flat discount, set your tax rate (10% GST for Australia), and tell your client how to pay you in the payment details box.</li>
+      <li><strong>Download and send</strong>Click <em>Download PDF</em> and email the invoice to your client. Done — no account, no watermark, no charge.</li>
+    </ol>
+
+    <h2>Why use this invoice generator?</h2>
+    <ul class="feature-grid">
+      <li><span class="f-icon">⬇</span><h3>Instant PDF download</h3><p>Your invoice is generated as a clean, professional PDF on your own device — ready to email in seconds.</p></li>
+      <li><span class="f-icon">🔒</span><h3>Private by design</h3><p>Nothing you type is sent to a server. Your invoice data lives in your browser and nowhere else.</p></li>
+      <li><span class="f-icon">∞</span><h3>Unlimited &amp; free forever</h3><p>No monthly invoice limits, no premium tier, no watermark on the free version. Every feature is free.</p></li>
+      <li><span class="f-icon">🧮</span><h3>Automatic calculations</h3><p>Line totals, discounts, tax and balance due are calculated live as you type — including tax-inclusive pricing.</p></li>
+      <li><span class="f-icon">💾</span><h3>Saves as you go</h3><p>Your details are auto-saved locally, and <em>New Invoice</em> keeps your business info and increments the invoice number.</p></li>
+      <li><span class="f-icon">🌏</span><h3>Multi-currency</h3><p>Invoice in AUD, USD, EUR, GBP, NZD and more, with correct formatting on screen and in the PDF.</p></li>
+      <li><span class="f-icon">🏷️</span><h3>Your branding</h3><p>Upload your logo and rename the tax label (GST, VAT, Sales Tax) to match how you do business.</p></li>
+      <li><span class="f-icon">💸</span><h3>Deposits &amp; part payments</h3><p>Record an amount already paid and the invoice shows the outstanding balance due — most free tools can't.</p></li>
+    </ul>
+
+    <h2>How this compares to other invoice generators</h2>
+    <p>Most "free" invoice tools gate something: the download behind a signup, the logo behind a paid plan, or a watermark on the PDF. Here's an honest comparison:</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Feature</th><th class="hl">This tool</th><th>Typical free generators</th><th>Accounting suites (free tier)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Download PDF without an account</td><td class="hl yes">Yes</td><td class="no">Often requires email</td><td class="no">Signup required</td></tr>
+          <tr><td>No watermark on PDF</td><td class="hl yes">Yes</td><td class="no">Sometimes watermarked</td><td class="yes">Yes</td></tr>
+          <tr><td>Unlimited invoices</td><td class="hl yes">Yes</td><td class="no">Often 2–3 free</td><td class="yes">Yes</td></tr>
+          <tr><td>No ads</td><td class="hl yes">Yes</td><td class="no">Ad-supported</td><td class="yes">Yes</td></tr>
+          <tr><td>Data stays on your device</td><td class="hl yes">Yes</td><td class="no">Stored on their servers</td><td class="no">Stored on their servers</td></tr>
+          <tr><td>GST / tax-inclusive pricing</td><td class="hl yes">Yes</td><td class="no">Rarely</td><td class="yes">Yes</td></tr>
+          <tr><td>Amount paid / balance due</td><td class="hl yes">Yes</td><td class="no">Rarely</td><td class="yes">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>What is an invoice?</h2>
+    <p>An invoice is a commercial document a seller issues to a buyer that lists the goods or services provided, the amount owed, and the terms of payment. It creates a formal record of the sale for both parties — the seller uses it to get paid and track income, and the buyer uses it to verify the charge and claim expenses.</p>
+
+    <h3>What every invoice should include</h3>
+    <ul>
+      <li><strong>The word "Invoice"</strong> (or "Tax Invoice" in Australia when GST applies) so the document's purpose is unambiguous.</li>
+      <li><strong>A unique invoice number</strong> — sequential numbering like INV-0042 keeps your records auditable.</li>
+      <li><strong>Your identity and contact details</strong> — business name, address, email, and business number (ABN in Australia).</li>
+      <li><strong>Your client's identity</strong> — the person or business being billed.</li>
+      <li><strong>Issue date and due date</strong> — when the invoice was raised and when payment is expected.</li>
+      <li><strong>An itemised list</strong> — description, quantity and price for each product or service.</li>
+      <li><strong>Tax</strong> — the rate and amount, shown separately or noted as included in the price.</li>
+      <li><strong>The total and balance due</strong> — the headline figure your client needs to pay.</li>
+      <li><strong>How to pay</strong> — bank details, PayID, PayPal, or a payment link, plus your payment terms.</li>
+    </ul>
+    <div class="callout"><p>Invoicing in Australia? Use our <a href="/invoice-generator-australia/">Australian invoice generator</a> — it defaults to a Tax Invoice with 10% GST, an ABN field, and a live ATO-compliance checklist.</p></div>
+
+    <h3>Common types of invoice</h3>
+    <ul>
+      <li><strong>Standard invoice</strong> — a bill for goods or services after (or before) delivery. What this tool creates.</li>
+      <li><strong>Tax invoice</strong> — an invoice that meets tax-authority requirements for claiming tax credits (in Australia, the ATO's GST rules).</li>
+      <li><strong>Proforma invoice</strong> — an advance quote-style invoice sent before work is done; not a demand for payment.</li>
+      <li><strong>Recurring invoice</strong> — the same invoice issued on a schedule, common for retainers and subscriptions. Use <em>New Invoice</em> to duplicate yours in one click.</li>
+      <li><strong>Credit note</strong> — a negative invoice that corrects or refunds a previous one.</li>
+      <li><strong>Interim / progress invoice</strong> — bills part of a large project; use the <em>Amount Paid</em> field to track deposits against the total.</li>
+    </ul>
+
+    <h3>Understanding payment terms</h3>
+    <p>Payment terms tell your client when payment is due. <strong>Net 30</strong> means payment is due 30 days from the invoice date; <strong>Net 7</strong> and <strong>Net 14</strong> are common for small businesses and freelancers, and <strong>Due on receipt</strong> means immediately. Shorter terms get you paid faster — research consistently shows invoices with 7–14 day terms are settled sooner than Net 30. Set the due date on your invoice and repeat the terms in the Terms box (e.g. "Payment due within 14 days of issue date").</p>
+
+    <h3>Tips to get paid faster</h3>
+    <ul>
+      <li><strong>Invoice immediately.</strong> Send the invoice the day the work is done — every day you wait delays the payment clock.</li>
+      <li><strong>Make paying effortless.</strong> Include full bank details or a payment link so your client never has to ask.</li>
+      <li><strong>Use clear due dates.</strong> "Due 23 July 2026" beats "Net 30" — remove all mental arithmetic.</li>
+      <li><strong>Number and reference everything.</strong> Quote their PO number so their accounts team can approve it without questions.</li>
+      <li><strong>Follow up politely and promptly.</strong> A short reminder the day after the due date resolves most late payments.</li>
+    </ul>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Is this invoice generator really free?</summary>
+        <p>Yes — completely free with no catches. There's no signup, no watermark on your PDF, no limit on how many invoices you create, and no ads. Fill in the invoice and download it.</p>
+      </details>
+      <details>
+        <summary>Do I need to create an account to download my invoice?</summary>
+        <p>No. Unlike most invoice tools, you never need an account or an email address. Click <em>Download PDF</em> and the file saves straight to your device.</p>
+      </details>
+      <details>
+        <summary>Is my invoice data private?</summary>
+        <p>Yes. Everything you type stays in your browser — your invoice data is never uploaded to our servers. The PDF is generated on your own device, and your details are saved locally so your next invoice is prefilled.</p>
+      </details>
+      <details>
+        <summary>Can I add my business logo?</summary>
+        <p>Yes. Click the logo box at the top of the invoice, or drag and drop an image file onto it. PNG and JPG both work, and the logo appears on your downloaded PDF.</p>
+      </details>
+      <details>
+        <summary>How do I add tax or GST to an invoice?</summary>
+        <p>Set the tax rate in the totals section — for Australian GST use 10%. You can rename the tax label (GST, VAT, Sales Tax) and tick <em>Prices include tax</em> if your rates are tax-inclusive. The tax amount is calculated and shown automatically.</p>
+      </details>
+      <details>
+        <summary>What file format is the invoice downloaded in?</summary>
+        <p>Invoices download as a PDF — the standard format for sending invoices by email. You can also use <em>Print</em> to print directly or save through your browser's print dialog.</p>
+      </details>
+      <details>
+        <summary>How should I number my invoices?</summary>
+        <p>Use a simple sequential series such as INV-0001, INV-0002 and never reuse a number. When you click <em>New Invoice</em>, the tool automatically increments your invoice number for you.</p>
+      </details>
+      <details>
+        <summary>Can I record a partial payment or deposit?</summary>
+        <p>Yes. Enter the amount already received in the <em>Amount Paid</em> field and the invoice shows the remaining <em>Balance Due</em> — useful for deposits and progress payments.</p>
+      </details>
+      <details>
+        <summary>Can I use this for international clients?</summary>
+        <p>Yes. Choose from 15+ currencies including USD, EUR, GBP and NZD, and rename the tax label to VAT or Sales Tax to match your client's country.</p>
+      </details>
+      <details>
+        <summary>Will my invoice disappear if I close the tab?</summary>
+        <p>No. Your invoice is saved automatically in your browser's local storage, so it will be exactly where you left it when you come back — on the same device and browser.</p>
+      </details>
+    </div>
+
+    <div class="cta-band">
+      <h2>Ready to send your invoice?</h2>
+      <p>Scroll up, fill it in, and download your PDF — free, no signup.</p>
+      <button type="button" class="btn btn-primary js-download">⬇ Download PDF</button>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div>
+        <a class="brand" href="/">invoice-generator<span class="tld">.com.au</span></a>
+        <p class="fineprint">The free invoice generator that respects your time and your data. No signup, no watermarks, no ads — your invoice data never leaves your browser.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="/">Invoice Generator</a></li>
+            <li><a href="/invoice-generator-australia/">Invoice Generator Australia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/about/">About us</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.INVOICE_CONFIG = {
+      storageKey: "invgen-home",
+      currency: "AUD",
+      docTitle: "INVOICE",
+      taxLabel: "Tax",
+      taxRate: 0,
+      numberPrefix: "INV-"
+    };
+  </script>
+  <script src="/js/vendor/jspdf.umd.min.js" defer></script>
+  <script src="/js/invoice.js" defer></script>
+</body>
+</html>
