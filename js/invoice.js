@@ -567,6 +567,47 @@
 
     var numPart = ($("#inv-number").value || "invoice").replace(/[^\w\-]+/g, "-");
     doc.save("Invoice-" + numPart + ".pdf");
+
+    track("invoice_pdf_download", { page: CFG.storageKey });
+    showSonicToast();
+  }
+
+  /* ---------- InvoiceSonic cross-promo ---------- */
+
+  var SONIC_URL = "https://invoicesonic.com/";
+
+  function sonicLink(placement) {
+    return SONIC_URL + "?utm_source=invoice-generator.com.au&utm_medium=referral&utm_campaign=" + placement;
+  }
+
+  function track(name, params) {
+    if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+  }
+
+  function showSonicToast() {
+    if (document.querySelector(".sonic-toast")) return;
+    var el = document.createElement("div");
+    el.className = "sonic-toast";
+    el.setAttribute("role", "status");
+    el.innerHTML =
+      '<button type="button" class="st-close" aria-label="Dismiss">×</button>' +
+      '<div class="st-head"><span class="tick">✓</span> Invoice downloaded</div>' +
+      "<p>Now send it, track the payment, and auto-remind late payers — free with <strong>InvoiceSonic</strong>, our full invoicing app.</p>" +
+      '<a class="btn btn-primary" target="_blank" rel="noopener" href="' + sonicLink("post_download") + '">Try InvoiceSonic free</a>';
+    el.querySelector(".st-close").addEventListener("click", function () { el.remove(); });
+    el.querySelector("a").addEventListener("click", function () {
+      track("sonic_click", { placement: "post_download" });
+    });
+    document.body.appendChild(el);
+    setTimeout(function () { if (el.parentNode) el.remove(); }, 30000);
+  }
+
+  function wireSonicLinks() {
+    $$("[data-sonic]").forEach(function (a) {
+      var placement = a.getAttribute("data-sonic");
+      a.href = sonicLink(placement);
+      a.addEventListener("click", function () { track("sonic_click", { placement: placement }); });
+    });
   }
 
   /* ---------- init ---------- */
@@ -629,6 +670,7 @@
       if (confirm("Start a new invoice? Your business details and settings are kept; client and line items are cleared.")) newInvoice();
     });
 
+    wireSonicLinks();
     recalc();
   }
 
