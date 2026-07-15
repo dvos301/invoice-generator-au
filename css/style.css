@@ -1131,6 +1131,108 @@ a { color: var(--accent); }
 
 @media (max-width: 600px) { .post-nav { grid-template-columns: 1fr; } .post-nav a:last-child { text-align: left; } }
 
+/* byline / last-reviewed note */
+.byline-note {
+  font-size: 13px;
+  color: var(--ink-faint);
+  border-left: 3px solid var(--accent);
+  padding: 6px 0 6px 12px;
+  margin: 0 0 22px;
+}
+.byline-note a { color: var(--ink-soft); }
+
+/* ---------- calculator tool ---------- */
+
+.calc { max-width: 640px; margin: 28px auto 0; padding: 0 20px; }
+
+.calc-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(22px, 4vw, 38px);
+}
+
+.calc-modes { display: flex; gap: 8px; margin-bottom: 22px; }
+
+.calc-mode {
+  flex: 1;
+  text-align: center;
+  padding: 11px 8px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink-soft);
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.calc-mode.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.calc-field label { display: block; font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
+
+.calc-input-wrap { position: relative; }
+.calc-input-wrap .cur { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-faint); font-size: 19px; }
+
+.calc-field input.amount {
+  width: 100%;
+  padding: 14px 14px 14px 32px;
+  font-size: 21px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  font-family: inherit;
+  color: var(--ink);
+}
+.calc-field input.amount:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(16,113,90,.12); }
+
+.calc-rate { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 14px; color: var(--ink-soft); }
+.calc-rate input { width: 66px; padding: 7px 8px; border: 1px solid var(--line); border-radius: 7px; text-align: right; font-family: inherit; font-size: 14px; }
+
+.calc-results { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; }
+.calc-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; font-size: 15px; color: var(--ink-soft); }
+.calc-row .v { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); font-size: 16px; }
+.calc-row.gst .v { color: var(--accent-dark); }
+.calc-row.total { font-size: 19px; font-weight: 700; color: var(--ink); border-top: 2px solid var(--ink); margin-top: 8px; padding-top: 14px; }
+.calc-row.total .v { font-size: 22px; }
+
+.calc-cta { margin-top: 20px; background: var(--accent-light); border-radius: 10px; padding: 14px 16px; font-size: 14.5px; color: var(--accent-dark); text-align: center; }
+.calc-cta a { font-weight: 700; }
+
+/* ---------- tool suite grid / cross-links ---------- */
+
+.tools-grid {
+  max-width: 1080px;
+  margin: 36px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.tool-card {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+}
+.tool-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); border-color: #cfe0da; }
+.tool-card .tc-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-light); color: var(--accent-dark); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 12px; }
+.tool-card h3 { font-size: 16.5px; margin: 0 0 5px; color: var(--ink); }
+.tool-card p { font-size: 14px; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+
+.tool-mesh { background: var(--line-soft); border-top: 1px solid var(--line); padding: 30px 20px; }
+.tool-mesh .inner { max-width: 1080px; margin: 0 auto; }
+.tool-mesh h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.7px; color: var(--ink-faint); margin: 0 0 16px; }
+.tool-mesh .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.tool-mesh a { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 9px 14px; text-decoration: none; color: var(--ink-soft); font-size: 14px; font-weight: 500; }
+.tool-mesh a:hover { border-color: var(--accent); color: var(--accent); }
+
 /* ---------- footer ---------- */
 
 .site-footer {

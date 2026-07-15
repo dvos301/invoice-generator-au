@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DMRRWY61N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7DMRRWY61N');
+  </script>
+  <title>Quote Generator Australia — Free Quotation Maker (PDF) | Invoice-Generator.com.au</title>
+  <meta name="description" content="Free Australian quote generator. Create a professional quotation with your logo, GST and ABN, then download as a PDF. No signup. Convert to an invoice in one click.">
+  <link rel="canonical" href="https://invoice-generator.com.au/quote-generator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css?v=4">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://invoice-generator.com.au/quote-generator/">
+  <meta property="og:title" content="Quote Generator Australia — Free Quotation Maker (PDF)">
+  <meta property="og:description" content="Free Australian quote generator. Create a professional quotation with your logo, GST and ABN, then download as a PDF. No signup. Convert to an invoice in one click.">
+  <meta property="og:image" content="https://invoice-generator.com.au/og-image.png">
+  <meta property="og:site_name" content="Invoice-Generator.com.au">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://invoice-generator.com.au/"},
+    {"@type":"ListItem","position":2,"name":"Quote Generator","item":"https://invoice-generator.com.au/quote-generator/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Quote Generator Australia","url":"https://invoice-generator.com.au/quote-generator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD"},"description":"Free Australian quote/quotation generator with GST and ABN, downloadable as PDF.","publisher":{"@type":"Organization","name":"Invoice-Generator.com.au","@id":"https://invoice-generator.com.au/#org"}}
+  </script>
+</head>
+<body class="has-tool">
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/" aria-label="Invoice-Generator.com.au home">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="3" y="1.5" width="20" height="23" rx="3" fill="#10715a"/><rect x="7" y="7" width="12" height="2" rx="1" fill="#fff"/><rect x="7" y="11.5" width="12" height="2" rx="1" fill="#fff" opacity="0.7"/><rect x="7" y="16" width="7" height="2" rx="1" fill="#fff" opacity="0.7"/></svg>
+        invoice-generator<span class="tld">.com.au</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Invoice Generator</a>
+        <a href="/invoice-generator-australia/">Australia (Tax Invoice)</a>
+        <a href="/invoicing-australia/" class="active">Guides &amp; Tools</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <h1>Quote Generator</h1>
+    <p class="sub">Create a professional quote and download it as a PDF in under a minute. Free, no signup — convert it to a tax invoice when you win the job.</p>
+    <ul class="trust"><li>No signup</li><li>GST &amp; ABN ready</li><li>PDF download</li><li>Convert to invoice</li></ul>
+  </section>
+  <main class="generator">
+    <section class="invoice-paper" aria-label="Editor">
+      <div class="inv-top">
+        <div class="logo-drop" id="logo-drop" role="button" tabindex="0" aria-label="Upload your logo">
+          <span class="logo-hint">+ Add your logo<br><small>click or drag &amp; drop</small></span>
+          <img id="logo-img" alt="Business logo">
+          <button type="button" class="logo-remove" title="Remove logo" aria-label="Remove logo">×</button>
+          <input type="file" id="logo-file" accept="image/*" hidden>
+        </div>
+        <div class="inv-title-block">
+          <input type="text" class="doc-title" id="doc-title" value="QUOTE" aria-label="Document title">
+          <div class="inv-number-row"><label for="inv-number">#</label><input type="text" id="inv-number" aria-label="Number"></div>
+        </div>
+      </div>
+      <div class="inv-parties">
+        <div>
+          <span class="field-label">From</span>
+          <input type="text" id="from-name" placeholder="Your name or business name" autocomplete="organization">
+          <input type="text" id="abn" placeholder="ABN — 11 digits" inputmode="numeric" aria-label="Australian Business Number">
+          <textarea id="from-details" rows="3" placeholder="Address, email, phone"></textarea>
+        </div>
+        <div>
+          <span class="field-label">Bill To</span>
+          <input type="text" id="to-name" placeholder="Client name or business">
+          <textarea id="to-details" rows="3" placeholder="Client address, email, ABN (required for invoices $1,000+)"></textarea>
+        </div>
+      </div>
+      <div class="inv-meta">
+        <div><span class="field-label">Issue date</span><input type="date" id="issue-date"></div>
+        <div><span class="field-label">Valid until</span><input type="date" id="due-date"></div>
+        <div><span class="field-label">Reference / PO</span><input type="text" id="reference" placeholder="Optional"></div>
+      </div>
+      <table class="items-table">
+        <thead><tr><th>Description</th><th class="col-qty">Qty</th><th class="col-rate">Rate</th><th class="col-amount">Amount</th><th class="col-del"></th></tr></thead>
+        <tbody id="items-body"></tbody>
+      </table>
+      <button type="button" class="add-item" id="add-item">+ Add line item</button>
+      <div class="inv-bottom">
+        <div class="inv-notes">
+          <div><span class="field-label">Payment details</span><textarea id="pay-details" rows="3" placeholder="How to accept this quote, or a deposit request"></textarea></div>
+          <div><span class="field-label">Notes</span><textarea id="notes" rows="2" placeholder="Thank you for your business!"></textarea></div>
+          <div><span class="field-label">Terms</span><textarea id="terms" rows="2" placeholder="e.g. Payment due within 14 days"></textarea></div>
+        </div>
+        <div class="totals">
+          <div class="totals-row"><span class="t-label">Subtotal</span><span class="t-value" id="v-subtotal">$0.00</span></div>
+          <div class="totals-row"><span class="t-label">Discount</span><span class="t-input"><input type="number" id="discount-value" min="0" step="any" placeholder="0"><select id="discount-type" aria-label="Discount type"><option value="percent">%</option><option value="flat">flat</option></select></span><span class="t-value" id="v-discount">$0.00</span></div>
+          <div class="totals-row"><span class="t-label tax-inline"><input type="text" id="tax-label" value="GST" aria-label="Tax label"><input type="number" id="tax-rate" min="0" step="any" value="10" aria-label="Tax rate percent">%</span><span class="t-value"><small id="tax-mode-note"></small> <span id="v-tax">$0.00</span></span></div>
+          <div class="totals-row"><span class="t-label">Shipping</span><span class="t-input"><input type="number" id="shipping" min="0" step="any" placeholder="0"></span><span class="t-value" id="v-shipping">$0.00</span></div>
+          <div class="totals-row grand"><span class="t-label">Total</span><span class="t-value" id="v-total">$0.00</span></div>
+          <div class="totals-row"><span class="t-label">Amount paid</span><span class="t-input"><input type="number" id="amount-paid" min="0" step="any" placeholder="0"></span></div>
+          <div class="totals-row balance"><span class="t-label">Balance due</span><span class="t-value" id="v-balance">$0.00</span></div>
+        </div>
+      </div>
+    </section>
+    <aside class="side-panel" aria-label="Settings and actions">
+      <div class="panel-card">
+        <div class="btn-row">
+          <button type="button" class="btn btn-primary js-download">⬇ Download PDF</button>
+          <button type="button" class="btn btn-ghost" id="btn-print">Print</button>
+          <button type="button" class="btn btn-ghost" id="btn-new">New</button>
+        </div>
+        <p class="autosave-note" id="autosave-note">Saved automatically in your browser</p>
+      </div>
+      <div class="panel-card">
+        <h2>Settings</h2>
+        <div class="panel-field"><label for="currency">Currency</label><select id="currency"></select></div>
+        <label class="check-field" for="tax-inclusive"><input type="checkbox" id="tax-inclusive"> Prices include GST</label>
+      </div>
+    </aside>
+  </main>
+  <div class="mobile-download"><button type="button" class="btn btn-primary js-download">⬇ Download PDF</button></div>
+  <article class="content">
+    <h2>How to make a quote in Australia</h2>
+    <p class="lead">A quote (or quotation) is a written estimate you give a customer before a job, setting out what you'll do and what it will cost. This free quote generator lays one out professionally and downloads it as a PDF — no signup.</p>
+    <h3>What to put on a quote</h3>
+    <ul>
+      <li>Your business name, ABN and contact details, and your logo</li>
+      <li>The customer's name</li>
+      <li>An itemised list of the work with a price for each line</li>
+      <li>The total, and whether it includes GST</li>
+      <li>A validity period (e.g. "valid for 30 days")</li>
+      <li>Any terms, exclusions or assumptions</li>
+    </ul>
+    <div class="callout"><p>Won the job? Turn your quote into a tax invoice in one click with the <a href="/invoice-generator-australia/">Australian invoice generator</a>. New to it all? Read <a href="/blog/invoice-vs-quote-vs-receipt/">invoice vs quote vs receipt</a>.</p></div>
+    <h2>Quote vs invoice</h2>
+    <p>A quote comes <em>before</em> the work and is an estimate; an invoice comes <em>after</em> and is a request for payment. A quote isn't a tax document, so it doesn't have to meet the ATO's tax-invoice rules — but showing your ABN and estimated GST keeps it consistent with the invoice that follows.</p>
+  </article>
+  <div class="tool-mesh">
+    <div class="inner">
+      <h2>Free Australian business tools</h2>
+      <div class="row">
+        <a href="/invoice-generator-australia/">Invoice Generator</a>
+        <a href="/gst-calculator/">GST Calculator</a>
+        <a href="/quote-generator/">Quote Generator</a>
+        <a href="/receipt-generator/">Receipt Generator</a>
+        <a href="/invoicing-australia/">All guides &amp; tools</a>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="inner">
+      <div>
+        <a class="brand" href="/">invoice-generator<span class="tld">.com.au</span></a>
+        <p class="fineprint">The free invoice generator that respects your time and your data. No signup, no watermarks, no ads — your invoice data never leaves your browser.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="/">Invoice Generator</a></li>
+            <li><a href="/invoice-generator-australia/">Invoice Generator Australia</a></li>
+            <li><a href="/gst-calculator/">GST Calculator</a></li>
+            <li><a href="/quote-generator/">Quote Generator</a></li>
+            <li><a href="/receipt-generator/">Receipt Generator</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/invoicing-australia/">Guides &amp; Tools</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>window.INVOICE_CONFIG = { storageKey:"invgen-quote", currency:"AUD", docTitle:"QUOTE", taxLabel:"GST", taxRate:10, showAbn:true, numberPrefix:"QUO-" };</script>
+  <script src="/js/vendor/jspdf.umd.min.js" defer></script>
+  <script src="/js/invoice.js" defer></script>
+</body>
+</html>

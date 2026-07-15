@@ -2,44 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://invoice-generator.com.au/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-16</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://invoice-generator.com.au/invoice-generator-australia/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://invoice-generator.com.au/about/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://invoice-generator.com.au/blog/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://invoice-generator.com.au/blog/how-to-write-an-invoice/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://invoice-generator.com.au/gst-calculator/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/invoice-generator-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/invoice-template-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/invoicing-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/quote-generator/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/receipt-generator/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/sole-trader-invoice-generator/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/tax-invoice-template/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/charging-late-fees-on-invoices-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://invoice-generator.com.au/blog/tax-invoice-requirements-australia/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://invoice-generator.com.au/blog/do-i-need-an-abn-to-invoice/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/einvoicing-peppol-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/gst-registration-threshold-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/how-to-chase-overdue-invoices-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://invoice-generator.com.au/blog/how-to-invoice-as-a-sole-trader-australia/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/how-to-number-invoices/</loc>
+    <lastmod>2026-07-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://invoice-generator.com.au/about/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://invoice-generator.com.au/blog/how-to-write-an-invoice/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/invoice-payment-terms-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/invoice-vs-quote-vs-receipt/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/proforma-vs-tax-invoice/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://invoice-generator.com.au/blog/tax-invoice-requirements-australia/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

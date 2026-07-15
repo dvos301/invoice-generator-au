@@ -15,13 +15,50 @@
   <meta name="description" content="Free Australian invoice generator. Create an ATO-compliant tax invoice with ABN, 10% GST and BSB/PayID payment details, then download as PDF. No signup, no watermark.">
   <link rel="canonical" href="https://invoice-generator.com.au/invoice-generator-australia/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/style.css?v=3">
+  <link rel="stylesheet" href="/css/style.css?v=4">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://invoice-generator.com.au/invoice-generator-australia/">
   <meta property="og:title" content="Invoice Generator Australia — Free ATO-Compliant Tax Invoices">
   <meta property="og:description" content="Create an ATO-compliant Australian tax invoice with ABN, 10% GST and PayID/BSB payment details. Free PDF download, no signup.">
+  <meta property="og:image" content="https://invoice-generator.com.au/og-image.png">
   <meta property="og:site_name" content="Invoice-Generator.com.au">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://invoice-generator.com.au/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://invoice-generator.com.au/#org",
+    "name": "Invoice-Generator.com.au",
+    "url": "https://invoice-generator.com.au/",
+    "logo": "https://invoice-generator.com.au/favicon.svg",
+    "description": "A free, privacy-first online invoice generator built in Australia."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://invoice-generator.com.au/" },
+      { "@type": "ListItem", "position": 2, "name": "Invoice Generator Australia", "item": "https://invoice-generator.com.au/invoice-generator-australia/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to create an Australian tax invoice",
+    "step": [
+      { "@type": "HowToStep", "name": "Add your details", "text": "Enter your business name, ABN and contact details, and upload your logo." },
+      { "@type": "HowToStep", "name": "Add your client", "text": "Enter who you are billing; include their ABN if the invoice is $1,000 or more." },
+      { "@type": "HowToStep", "name": "List your items", "text": "Add a line for each product or service with a quantity and rate." },
+      { "@type": "HowToStep", "name": "Set GST", "text": "Apply 10% GST (inclusive or exclusive) and add your payment details." },
+      { "@type": "HowToStep", "name": "Download the PDF", "text": "Click Download PDF and email the tax invoice to your client." }
+    ]
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,7 +70,9 @@
     "browserRequirements": "Requires JavaScript",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "AUD" },
     "description": "Free Australian tax invoice generator with ABN field, 10% GST calculation, GST-inclusive pricing, and a live ATO compliance checklist. Download as PDF with no signup.",
-    "featureList": "ATO tax invoice compliance checklist, ABN field, 10% GST, GST-inclusive pricing, BSB and PayID payment details, PDF download, no signup, no watermark"
+    "featureList": "ATO tax invoice compliance checklist, ABN field, 10% GST, GST-inclusive pricing, BSB and PayID payment details, PDF download, no signup, no watermark",
+    "dateModified": "2026-07-16",
+    "publisher": { "@id": "https://invoice-generator.com.au/#org" }
   }
   </script>
   <script type="application/ld+json">
@@ -96,9 +135,9 @@
       <nav class="site-nav" aria-label="Main navigation">
         <a href="/">Invoice Generator</a>
         <a href="/invoice-generator-australia/" class="active">Australia (Tax Invoice)</a>
+        <a href="/invoicing-australia/">Guides &amp; Tools</a>
         <a href="/blog/">Blog</a>
         <a href="/about/">About</a>
-        <a href="https://invoicesonic.com/" data-sonic="nav" target="_blank" rel="noopener">Invoicing App ↗</a>
       </nav>
     </div>
   </header>
@@ -282,6 +321,7 @@
   </div>
 
   <article class="content">
+    <p class="byline-note">By Dyllan Vosloo, Founder · Last reviewed 16 July 2026 · References the <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" rel="noopener" target="_blank">ATO tax invoice rules</a></p>
     <h2>The free invoice generator built for Australian businesses</h2>
     <p class="lead">Generic invoice tools make Australians fight the form — changing the title to "Tax Invoice", hunting for an ABN field, adding GST by hand. This generator is Australian by default: AUD currency, 10% GST, an ABN field where it belongs, BSB and PayID payment details, and a live checklist that confirms your invoice meets the ATO's tax invoice requirements before you send it.</p>
 
@@ -305,7 +345,21 @@
       <li><strong>Registered for GST?</strong> Issue a <strong>Tax Invoice</strong>, charge 10% GST, and show the GST amount. Your GST-registered customers need a valid tax invoice to claim GST credits on purchases over $82.50.</li>
       <li><strong>Not registered for GST?</strong> Issue a regular <strong>Invoice</strong> — change the title field from "Tax Invoice" to "Invoice", set the GST rate to 0, and don't charge GST. You must register once your GST turnover reaches <strong>$75,000 a year</strong> (or from day one for taxi and ride-share drivers).</li>
     </ul>
-    <p>Either way, quote your ABN. If you invoice another business without one, the payer can be required to withhold <strong>47% of the payment</strong> under the ATO's "No ABN withholding" rules — a painful way to learn that ABNs are free to obtain from the Australian Business Register.</p>
+    <p>Either way, quote your ABN. If you invoice another business without one, the payer can be required to withhold <strong>47% of the payment</strong> under the ATO's "No ABN withholding" rules — a painful way to learn that ABNs are free to obtain from the Australian Business Register. More detail: <a href="/blog/do-i-need-an-abn-to-invoice/">do I need an ABN to invoice</a>.</p>
+
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead><tr><th>&nbsp;</th><th class="hl">Tax Invoice</th><th>Regular Invoice</th></tr></thead>
+        <tbody>
+          <tr><td>Who issues it</td><td class="hl">GST-registered businesses</td><td>Businesses not registered for GST</td></tr>
+          <tr><td>Title on the document</td><td class="hl">"Tax Invoice"</td><td>"Invoice"</td></tr>
+          <tr><td>Shows 10% GST</td><td class="hl yes">Yes</td><td class="no">No</td></tr>
+          <tr><td>Needs your ABN</td><td class="hl yes">Yes</td><td class="yes">Recommended</td></tr>
+          <tr><td>Lets buyer claim GST credit</td><td class="hl yes">Yes</td><td class="no">No</td></tr>
+          <tr><td>Required once turnover hits $75k</td><td class="hl yes">Yes</td><td class="no">—</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <h3>GST-inclusive vs GST-exclusive pricing</h3>
     <p>Australian businesses commonly quote prices two ways, and this generator supports both:</p>
@@ -331,6 +385,16 @@
       <li><strong>Not GST-registered yet?</strong> Title it "Invoice", set GST to 0, and keep an eye on the $75,000 registration threshold as you grow.</li>
       <li><strong>Charging a deposit?</strong> Record it in <em>Amount Paid</em> so the invoice shows the remaining balance due.</li>
     </ul>
+    <p>Invoicing under your own name? There's a dedicated <a href="/sole-trader-invoice-generator/">sole trader invoice generator</a> with the same ATO checklist, plus guides on <a href="/blog/how-to-invoice-as-a-sole-trader-australia/">invoicing as a sole trader</a> and the <a href="/blog/gst-registration-threshold-australia/">$75,000 GST threshold</a>.</p>
+
+    <h2>An invoice generator Australia trades and freelancers can rely on</h2>
+    <p>Whatever you do, the invoice generator Australia businesses reach for should fit how you actually bill. A few common cases:</p>
+    <ul>
+      <li><strong>Tradies &amp; construction:</strong> itemise labour and materials separately, add progress-payment deposits, and show GST clearly — see <a href="/blog/how-to-write-an-invoice/">how to write an invoice</a>.</li>
+      <li><strong>Rideshare &amp; taxi drivers:</strong> you must register for GST from day one, so always issue a Tax Invoice with 10% GST.</li>
+      <li><strong>Consultants &amp; freelancers:</strong> set clear <a href="/blog/invoice-payment-terms-australia/">payment terms</a> and chase late payers early — here's <a href="/blog/how-to-chase-overdue-invoices-australia/">how to chase overdue invoices</a>.</li>
+    </ul>
+    <p>Need to quote first, or confirm a payment? Use the free <a href="/quote-generator/">quote generator</a> and <a href="/receipt-generator/">receipt generator</a>, or work out the tax with the <a href="/gst-calculator/">GST calculator</a>.</p>
 
     <h2>Why Australians use this generator</h2>
     <ul class="feature-grid">
@@ -401,6 +465,9 @@
           <ul>
             <li><a href="/">Invoice Generator</a></li>
             <li><a href="/invoice-generator-australia/">Invoice Generator Australia</a></li>
+            <li><a href="/gst-calculator/">GST Calculator</a></li>
+            <li><a href="/quote-generator/">Quote Generator</a></li>
+            <li><a href="/receipt-generator/">Receipt Generator</a></li>
             <li><a data-sonic="footer" href="https://invoicesonic.com/" target="_blank" rel="noopener">InvoiceSonic — invoicing app</a></li>
           </ul>
         </div>

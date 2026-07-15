@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DMRRWY61N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7DMRRWY61N');
+  </script>
+  <title>GST Calculator Australia — Add or Remove 10% GST (Free) | Invoice-Generator.com.au</title>
+  <meta name="description" content="Free Australian GST calculator. Add 10% GST to a price or remove GST from a total (÷11) instantly. Works for invoices, quotes and BAS. No signup.">
+  <link rel="canonical" href="https://invoice-generator.com.au/gst-calculator/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css?v=4">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://invoice-generator.com.au/gst-calculator/">
+  <meta property="og:title" content="GST Calculator Australia — Add or Remove 10% GST (Free)">
+  <meta property="og:description" content="Add 10% GST to a price or remove GST from a total instantly. Free, no signup.">
+  <meta property="og:image" content="https://invoice-generator.com.au/og-image.png">
+  <meta property="og:site_name" content="Invoice-Generator.com.au">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GST Calculator Australia",
+    "url": "https://invoice-generator.com.au/gst-calculator/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "AUD" },
+    "description": "Free Australian GST calculator to add 10% GST to a price or remove GST from a GST-inclusive total.",
+    "publisher": { "@type": "Organization", "name": "Invoice-Generator.com.au", "@id": "https://invoice-generator.com.au/#org" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://invoice-generator.com.au/" },
+      { "@type": "ListItem", "position": 2, "name": "GST Calculator", "item": "https://invoice-generator.com.au/gst-calculator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I calculate GST in Australia?", "acceptedAnswer": { "@type": "Answer", "text": "To add GST, multiply the price by 1.1 (10%). To find the GST included in a GST-inclusive total, divide the total by 11. To get the price before GST, divide the total by 1.1." } },
+      { "@type": "Question", "name": "How do I remove GST from a total?", "acceptedAnswer": { "@type": "Answer", "text": "Divide the GST-inclusive amount by 11 to get the GST portion, and subtract it from the total to get the GST-exclusive price. For example, $110 includes $10 GST and $100 before GST." } },
+      { "@type": "Question", "name": "What is the GST rate in Australia?", "acceptedAnswer": { "@type": "Answer", "text": "The GST rate in Australia is 10%, applied to most goods and services. Some items are GST-free (such as basic food and some health and education services)." } },
+      { "@type": "Question", "name": "Do I need to charge GST?", "acceptedAnswer": { "@type": "Answer", "text": "You must register for and charge GST once your business's GST turnover reaches $75,000 a year (or from day one for taxi and ride-share drivers). Below that, registration is optional." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/" aria-label="Invoice-Generator.com.au home">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="3" y="1.5" width="20" height="23" rx="3" fill="#10715a"/><rect x="7" y="7" width="12" height="2" rx="1" fill="#fff"/><rect x="7" y="11.5" width="12" height="2" rx="1" fill="#fff" opacity="0.7"/><rect x="7" y="16" width="7" height="2" rx="1" fill="#fff" opacity="0.7"/></svg>
+        invoice-generator<span class="tld">.com.au</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Invoice Generator</a>
+        <a href="/invoice-generator-australia/">Australia (Tax Invoice)</a>
+        <a href="/invoicing-australia/">Guides &amp; Tools</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>GST Calculator</h1>
+    <p class="sub">Add 10% GST to a price, or work out the GST hidden inside a total — instantly. Free, no signup, built for Australian businesses.</p>
+  </section>
+
+  <div class="calc">
+    <div class="calc-card">
+      <div class="calc-modes" role="tablist">
+        <button type="button" class="calc-mode active" id="mode-add" role="tab" aria-selected="true">Add GST</button>
+        <button type="button" class="calc-mode" id="mode-remove" role="tab" aria-selected="false">Remove GST</button>
+      </div>
+      <div class="calc-field">
+        <label for="calc-amount" id="calc-label">Amount (excluding GST)</label>
+        <div class="calc-input-wrap">
+          <span class="cur">$</span>
+          <input type="number" class="amount" id="calc-amount" min="0" step="any" placeholder="0.00" inputmode="decimal" autofocus>
+        </div>
+        <div class="calc-rate">
+          <label for="calc-rate" style="margin:0;">GST rate</label>
+          <input type="number" id="calc-rate" value="10" min="0" step="any">%
+        </div>
+      </div>
+      <div class="calc-results">
+        <div class="calc-row"><span id="r-base-label">Amount (excl. GST)</span><span class="v" id="r-base">$0.00</span></div>
+        <div class="calc-row gst"><span id="r-gst-label">GST (10%)</span><span class="v" id="r-gst">$0.00</span></div>
+        <div class="calc-row total"><span>Total (incl. GST)</span><span class="v" id="r-total">$0.00</span></div>
+      </div>
+      <div class="calc-cta">
+        Putting this on an invoice? <a href="/invoice-generator-australia/">Create a GST tax invoice →</a>
+      </div>
+    </div>
+  </div>
+
+  <article class="content">
+    <h2>How to calculate GST in Australia</h2>
+    <p class="lead">Australia's Goods and Services Tax (GST) is a flat <strong>10%</strong> on most goods and services. The maths is simple once you know which direction you're going — this calculator does both, but here's what's happening under the hood.</p>
+
+    <h3>Adding GST to a price</h3>
+    <p>If you have a price that <em>excludes</em> GST and want the GST-inclusive total, multiply by 1.1:</p>
+    <ul>
+      <li><strong>GST amount</strong> = price × 10% (e.g. $200 × 0.10 = $20)</li>
+      <li><strong>Total including GST</strong> = price × 1.1 (e.g. $200 × 1.1 = $220)</li>
+    </ul>
+
+    <h3>Removing GST from a total</h3>
+    <p>If you have a GST-<em>inclusive</em> total and want to find the GST portion, divide by 11 — not by 10. This trips a lot of people up:</p>
+    <ul>
+      <li><strong>GST included</strong> = total ÷ 11 (e.g. $220 ÷ 11 = $20)</li>
+      <li><strong>Price before GST</strong> = total ÷ 1.1 (e.g. $220 ÷ 1.1 = $200)</li>
+    </ul>
+    <p>Why one-eleventh? Because the 10% was added to the smaller pre-GST figure, so GST is 1/11th of the grossed-up total, not 1/10th.</p>
+
+    <div class="callout"><p>Need this on a compliant tax invoice with GST shown correctly? The <a href="/invoice-generator-australia/">Australian invoice generator</a> calculates GST both ways (inclusive or exclusive) and lays out an ATO-ready tax invoice for free.</p></div>
+
+    <h2>Do you need to charge GST?</h2>
+    <p>You must register for GST once your <strong>GST turnover reaches $75,000</strong> a year (or from day one if you drive a taxi or ride-share). Below that, registering is optional. Once registered, you charge 10% GST and issue <strong>tax invoices</strong>. Not registered? You issue plain invoices with no GST. There's more detail in our guide to the <a href="/blog/gst-registration-threshold-australia/">GST registration threshold</a> and the <a href="/blog/tax-invoice-requirements-australia/">tax invoice requirements</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How do I calculate GST in Australia?</summary><p>To add GST, multiply the price by 1.1. To find the GST inside a GST-inclusive total, divide the total by 11. To get the price before GST, divide the total by 1.1.</p></details>
+      <details><summary>How do I remove GST from a total?</summary><p>Divide the GST-inclusive amount by 11 to get the GST portion, then subtract it from the total for the GST-exclusive price. $110 includes $10 GST and $100 before GST.</p></details>
+      <details><summary>What is the GST rate in Australia?</summary><p>10%, applied to most goods and services. Some items are GST-free, such as basic food and certain health and education services.</p></details>
+      <details><summary>Do I need to charge GST?</summary><p>Only once your GST turnover reaches $75,000 a year (or from day one for taxi and ride-share drivers). Below that, registration is optional.</p></details>
+    </div>
+    <p><small>General information, not tax advice — check the <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst" target="_blank" rel="noopener">ATO</a> for your situation.</small></p>
+  </article>
+
+  <div class="tool-mesh">
+    <div class="inner">
+      <h2>Free Australian business tools</h2>
+      <div class="row">
+        <a href="/invoice-generator-australia/">Invoice Generator</a>
+        <a href="/gst-calculator/">GST Calculator</a>
+        <a href="/quote-generator/">Quote Generator</a>
+        <a href="/receipt-generator/">Receipt Generator</a>
+        <a href="/invoicing-australia/">All guides &amp; tools</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div>
+        <a class="brand" href="/">invoice-generator<span class="tld">.com.au</span></a>
+        <p class="fineprint">The free invoice generator that respects your time and your data. No signup, no watermarks, no ads — your invoice data never leaves your browser.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="/">Invoice Generator</a></li>
+            <li><a href="/invoice-generator-australia/">Invoice Generator Australia</a></li>
+            <li><a href="/gst-calculator/">GST Calculator</a></li>
+            <li><a href="/quote-generator/">Quote Generator</a></li>
+            <li><a href="/receipt-generator/">Receipt Generator</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/invoicing-australia/">Guides &amp; Tools</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var mode = "add";
+      var amt = document.getElementById("calc-amount");
+      var rate = document.getElementById("calc-rate");
+      var addBtn = document.getElementById("mode-add"), remBtn = document.getElementById("mode-remove");
+      var label = document.getElementById("calc-label");
+      var rBaseL = document.getElementById("r-base-label"), rGstL = document.getElementById("r-gst-label");
+      var rBase = document.getElementById("r-base"), rGst = document.getElementById("r-gst"), rTotal = document.getElementById("r-total");
+
+      function money(n){ return "$" + (isFinite(n)?n:0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+      function num(v){ var n = parseFloat(String(v).replace(/,/g,"")); return isFinite(n)&&n>0?n:0; }
+
+      function calc(){
+        var a = num(amt.value), r = num(rate.value)/100;
+        var base, gst, total;
+        if (mode === "add"){ base = a; gst = a*r; total = a+gst; }
+        else { total = a; base = r>0 ? a/(1+r) : a; gst = total-base; }
+        var pct = num(rate.value);
+        rGstL.textContent = "GST (" + (pct||0) + "%)";
+        rBase.textContent = money(base); rGst.textContent = money(gst); rTotal.textContent = money(total);
+      }
+      function setMode(m){
+        mode = m;
+        addBtn.classList.toggle("active", m==="add"); addBtn.setAttribute("aria-selected", m==="add");
+        remBtn.classList.toggle("active", m==="remove"); remBtn.setAttribute("aria-selected", m==="remove");
+        label.textContent = m==="add" ? "Amount (excluding GST)" : "Amount (including GST)";
+        rBaseL.textContent = "Amount (excl. GST)";
+        calc();
+      }
+      addBtn.addEventListener("click", function(){ setMode("add"); });
+      remBtn.addEventListener("click", function(){ setMode("remove"); });
+      amt.addEventListener("input", calc); rate.addEventListener("input", calc);
+      calc();
+    })();
+  </script>
+</body>
+</html>
