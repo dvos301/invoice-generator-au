@@ -1200,6 +1200,18 @@ a { color: var(--accent); }
 .calc-cta { margin-top: 20px; background: var(--accent-light); border-radius: 10px; padding: 14px 16px; font-size: 14.5px; color: var(--accent-dark); text-align: center; }
 .calc-cta a { font-weight: 700; }
 
+/* profession link list */
+.content .prof-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px 16px;
+}
+.content .prof-list li { margin: 0; }
+.content .prof-list a { display: block; padding: 8px 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--ink-soft); font-size: 14.5px; font-weight: 500; }
+.content .prof-list a:hover { border-color: var(--accent); color: var(--accent); }
+
 /* ---------- tool suite grid / cross-links ---------- */
 
 .tools-grid {
