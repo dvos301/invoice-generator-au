@@ -144,7 +144,8 @@ def main():
     request = urllib.request.Request("https://api.indexnow.org/indexnow", data=payload, headers={"Content-Type": "application/json; charset=utf-8"}, method="POST")
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
-            print(f"IndexNow HTTP {response.status}: {len(urls)} URLs")
+            detail = "key validation pending" if response.status == 202 else "received"
+            print(f"IndexNow HTTP {response.status}: {len(urls)} URLs {detail}")
     except urllib.error.HTTPError as exc:
         print(f"IndexNow HTTP {exc.code}: {exc.read().decode(errors='replace')[:300]}", file=sys.stderr)
         return 1
