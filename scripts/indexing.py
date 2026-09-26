@@ -105,14 +105,20 @@ def main():
     parser.add_argument("action", choices=["audit", "inspect", "submit-sitemap", "indexnow"])
     parser.add_argument("urls", nargs="*", help="Site paths or full URLs")
     parser.add_argument("--all", action="store_true", help="Use every URL in the sitemap")
+    parser.add_argument("--file", type=Path, help="Read one site URL or path per line")
     parser.add_argument("--dry-run", action="store_true", help="Validate without IndexNow submission")
     args = parser.parse_args()
-    if args.all and args.urls:
-        parser.error("Use --all or specific URLs, not both")
-    if args.action in ("inspect", "indexnow", "audit") and not (args.all or args.urls):
-        parser.error("Specify URLs or --all")
+    if args.all and (args.urls or args.file):
+        parser.error("Use --all or specific URLs/--file, not both")
+    if args.action in ("inspect", "indexnow", "audit") and not (args.all or args.urls or args.file):
+        parser.error("Specify URLs, --file, or --all")
     listed = sitemap_urls() if args.action != "submit-sitemap" else set()
-    urls = sorted(listed) if args.all else [normalize(v) for v in args.urls]
+    values = list(args.urls)
+    if args.file:
+        values.extend(line.strip() for line in args.file.read_text().splitlines() if line.strip() and not line.lstrip().startswith("#"))
+    urls = sorted(listed) if args.all else list(dict.fromkeys(normalize(v) for v in values))
+    if args.action in ("inspect", "indexnow", "audit") and not urls:
+        parser.error("No URLs selected")
 
     if args.action == "audit":
         return 0 if audit(urls, listed) else 1
