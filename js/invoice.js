@@ -42,6 +42,7 @@
 
   var logoDataUrl = null;
   var saveTimer = null;
+  var quoteBeforeConversion = null;
 
   /* ---------- helpers ---------- */
 
@@ -179,6 +180,17 @@
     if (noteEl) noteEl.textContent = note || "";
   }
 
+  function validAbn(value) {
+    var digits = value.replace(/\s+/g, "");
+    if (!/^\d{11}$/.test(digits)) return false;
+    var weights = [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+    var sum = 0;
+    for (var i = 0; i < 11; i++) {
+      sum += (Number(digits[i]) - (i === 0 ? 1 : 0)) * weights[i];
+    }
+    return sum % 89 === 0;
+  }
+
   function updateAtoChecklist(t) {
     var title = ($("#doc-title").value || "").toLowerCase();
     setCheck("ck-title", title.indexOf("tax invoice") !== -1 ? "ok" : "todo");
@@ -186,8 +198,8 @@
     setCheck("ck-seller", $("#from-name").value.trim() ? "ok" : "todo");
 
     var abn = ($("#abn").value || "").replace(/\s+/g, "");
-    setCheck("ck-abn", /^\d{11}$/.test(abn) ? "ok" : "todo",
-      abn && !/^\d{11}$/.test(abn) ? "ABN should be 11 digits" : "");
+    setCheck("ck-abn", validAbn(abn) ? "ok" : "todo",
+      abn && !validAbn(abn) ? "Enter a valid 11-digit ABN" : "");
 
     setCheck("ck-date", $("#issue-date").value ? "ok" : "todo");
 
@@ -197,9 +209,9 @@
     });
     setCheck("ck-items", hasItem ? "ok" : "todo");
 
-    var gstShown = t.rate > 0;
+    var gstShown = t.rate === 10 && t.tax > 0;
     setCheck("ck-gst", gstShown ? "ok" : "todo",
-      gstShown ? (t.inclusive ? "Shown as included in prices" : "") : "Set GST to 10% (or note if not registered)");
+      gstShown ? (t.inclusive ? "Included in prices" : "") : "Use 10% for taxable sales if GST-registered");
 
     if (t.total >= 1000) {
       setCheck("ck-buyer", $("#to-name").value.trim() ? "ok" : "todo",
@@ -256,6 +268,11 @@
     if (!raw) return false;
     var s;
     try { s = JSON.parse(raw); } catch (e) { return false; }
+
+    return applyState(s);
+  }
+
+  function applyState(s) {
 
     if (s.logo) setLogo(s.logo);
     $("#doc-title").value = s.docTitle || CFG.docTitle;
@@ -446,7 +463,7 @@
       metaY += 5.4;
     }
     metaRow("Issue date", formatDate($("#issue-date").value));
-    metaRow("Due date", formatDate($("#due-date").value));
+    metaRow(CFG.docTitle === "QUOTE" && $("#doc-title").value.trim().toUpperCase() === "QUOTE" ? "Valid until" : "Due date", formatDate($("#due-date").value));
     metaRow("Reference", $("#reference").value);
 
     y = Math.max(y1, y2, metaY) + 8;
@@ -633,6 +650,12 @@
       $("#tax-inclusive").checked = CFG.taxInclusive;
       addItemRow();
     }
+    if (CFG.docTitle === "QUOTE" && $("#doc-title").value.trim().toUpperCase() !== "QUOTE") {
+      var restoredDueLabel = $("#due-date").closest("div").querySelector(".field-label");
+      if (restoredDueLabel) restoredDueLabel.textContent = "Due date";
+      var restoredConvertBtn = $("#btn-convert");
+      if (restoredConvertBtn) restoredConvertBtn.textContent = "Restore quote";
+    }
 
     /* events — recalc + autosave on any input */
     document.addEventListener("input", function (e) {
@@ -667,7 +690,46 @@
     if (printBtn) printBtn.addEventListener("click", function () { window.print(); });
     var newBtn = $("#btn-new");
     if (newBtn) newBtn.addEventListener("click", function () {
-      if (confirm("Start a new invoice? Your business details and settings are kept; client and line items are cleared.")) newInvoice();
+      if (confirm("Start a new document? Your business details and settings are kept; client and line items are cleared.")) {
+        newInvoice();
+        if (CFG.docTitle === "QUOTE") {
+          $("#doc-title").value = "QUOTE";
+          $("#inv-number").value = $("#inv-number").value.replace(/^INV-/, "QUO-");
+          var quoteDateLabel = $("#due-date").closest("div").querySelector(".field-label");
+          if (quoteDateLabel) quoteDateLabel.textContent = "Valid until";
+          var quoteConvertBtn = $("#btn-convert");
+          if (quoteConvertBtn) quoteConvertBtn.textContent = "Convert to invoice";
+          recalc();
+        }
+      }
+    });
+
+    var convertBtn = $("#btn-convert");
+    if (convertBtn) convertBtn.addEventListener("click", function () {
+      if ($("#doc-title").value.trim().toUpperCase() !== "QUOTE") {
+        if (!quoteBeforeConversion) {
+          try { quoteBeforeConversion = JSON.parse(localStorage.getItem(CFG.storageKey + "-quote-backup")); } catch (e) {}
+        }
+        if (quoteBeforeConversion) {
+          applyState(quoteBeforeConversion);
+          var validUntilLabel = $("#due-date").closest("div").querySelector(".field-label");
+          if (validUntilLabel) validUntilLabel.textContent = "Valid until";
+          convertBtn.textContent = "Convert to invoice";
+          recalc();
+        }
+        return;
+      }
+      quoteBeforeConversion = collectState();
+      try { localStorage.setItem(CFG.storageKey + "-quote-backup", JSON.stringify(quoteBeforeConversion)); } catch (e) {}
+      $("#doc-title").value = num($("#tax-rate").value) > 0 ? "TAX INVOICE" : "INVOICE";
+      $("#inv-number").value = $("#inv-number").value.replace(/^QUO-/, "INV-");
+      $("#issue-date").value = todayISO();
+      $("#due-date").value = todayISO(14);
+      var dueLabel = $("#due-date").closest("div").querySelector(".field-label");
+      if (dueLabel) dueLabel.textContent = "Due date";
+      convertBtn.textContent = "Restore quote";
+      recalc();
+      $("#doc-title").focus();
     });
 
     wireSonicLinks();
