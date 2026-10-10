@@ -586,7 +586,7 @@
     doc.save("Invoice-" + numPart + ".pdf");
 
     track("invoice_pdf_download", { page: CFG.storageKey });
-    showSonicToast();
+    showSonicToast(t);
   }
 
   /* ---------- InvoiceSonic cross-promo ---------- */
@@ -601,20 +601,82 @@
     if (typeof window.gtag === "function") window.gtag("event", name, params || {});
   }
 
-  function showSonicToast() {
+  /* Download counter shared by every tool page on this origin.
+     Storage can be blocked (private mode, strict settings), so every access
+     is wrapped and an in-memory count keeps working for the current visit. */
+  var DOWNLOAD_COUNT_KEY = "ig-download-count";
+  var memDownloadCount = 0;
+
+  function bumpDownloadCount() {
+    var stored = 0;
+    try { stored = parseInt(localStorage.getItem(DOWNLOAD_COUNT_KEY), 10) || 0; } catch (e) {}
+    var count = Math.max(stored, memDownloadCount) + 1;
+    memDownloadCount = count;
+    try { localStorage.setItem(DOWNLOAD_COUNT_KEY, String(count)); } catch (e) {}
+    return count;
+  }
+
+  function ordinal(n) {
+    var mod100 = n % 100;
+    if (mod100 >= 11 && mod100 <= 13) return n + "th";
+    return n + ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th");
+  }
+
+  function docKind() {
+    var title = ($("#doc-title").value || "").toUpperCase();
+    if (title.indexOf("QUOTE") !== -1) return "quote";
+    if (title.indexOf("RECEIPT") !== -1) return "receipt";
+    return "invoice";
+  }
+
+  function showSonicToast(t) {
+    var count = bumpDownloadCount();
     if (document.querySelector(".sonic-toast")) return;
+
+    var kind = docKind();
+    var title = ($("#doc-title").value || "").toUpperCase();
+    var total = t && t.total ? t.total : 0;
+    var repeat = count >= 2;
+    var placement = repeat ? "post_download_repeat" : "post_download";
+    var head = kind.charAt(0).toUpperCase() + kind.slice(1) + " downloaded";
+
+    // One tailored line for higher-stakes invoices (never for quotes or receipts).
+    var variant = "standard";
+    var extra = "";
+    if (kind === "invoice" && total >= 1000 && !ZERO_DECIMAL[$("#currency").value]) {
+      variant = "big_invoice";
+      extra = "<p>Waiting on " + money(total) + "? See the moment your client opens the invoice, so you know exactly when to follow up.</p>";
+    } else if (!repeat && kind === "invoice" && title.indexOf("TAX INVOICE") !== -1) {
+      variant = "tax_invoice";
+      extra = "<p>Keep every tax invoice in one secure cloud history instead of a downloads folder.</p>";
+    }
+
+    var body;
+    if (!repeat) {
+      body = "<p>Now send it, track the payment, and auto-remind late payers — start free with <strong>InvoiceSonic</strong>, our full invoicing app.</p>";
+    } else if (kind === "quote") {
+      body = "<p>That's your " + ordinal(count) + " download here. Send quotes clients can accept online, then turn them into invoices with the line items carried over — <strong>InvoiceSonic Pro</strong>, 7-day free trial.</p>";
+    } else if (kind === "receipt") {
+      body = "<p>That's your " + ordinal(count) + " download here. Email receipts the moment you mark an invoice paid, and keep each client's history in one place — <strong>InvoiceSonic Pro</strong>, 7-day free trial.</p>";
+    } else {
+      body = "<p>That's your " + ordinal(count) + " download here. Save your clients, keep every invoice in one history and get paid faster with automatic reminders — <strong>InvoiceSonic Pro</strong>, 7-day free trial.</p>";
+    }
+    var cta = repeat ? "Start the 7-day free trial" : "Try InvoiceSonic free";
+
     var el = document.createElement("div");
     el.className = "sonic-toast";
     el.setAttribute("role", "status");
     el.innerHTML =
       '<button type="button" class="st-close" aria-label="Dismiss">×</button>' +
-      '<div class="st-head"><span class="tick">✓</span> Invoice downloaded</div>' +
-      "<p>Now send it, track the payment, and auto-remind late payers — free with <strong>InvoiceSonic</strong>, our full invoicing app.</p>" +
-      '<a class="btn btn-primary" target="_blank" rel="noopener" href="' + sonicLink("post_download") + '">Try InvoiceSonic free</a>';
+      '<div class="st-head"><span class="tick">✓</span> ' + head + "</div>" +
+      body + extra +
+      '<a class="btn btn-primary" target="_blank" rel="noopener" href="' + sonicLink(placement) + '">' + cta + "</a>";
+    var eventParams = { placement: placement, count: count, doc_kind: kind, variant: variant };
     el.querySelector(".st-close").addEventListener("click", function () { el.remove(); });
     el.querySelector("a").addEventListener("click", function () {
-      track("sonic_click", { placement: "post_download" });
+      track("sonic_click", eventParams);
     });
+    track("sonic_toast_shown", eventParams);
     document.body.appendChild(el);
     setTimeout(function () { if (el.parentNode) el.remove(); }, 30000);
   }

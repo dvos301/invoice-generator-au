@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DMRRWY61N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7DMRRWY61N');
+  </script>
+  <title>Do I Add GST to My Invoice? | The Yes/No Rule + Worked Maths | Invoice-Generator.com.au</title>
+  <meta name="description" content="Do I add GST to my invoice? Only if you're registered for GST and the sale is taxable. Decision table, +10% vs ÷11 maths, GST-free items, rounding.">
+  <link rel="canonical" href="https://invoice-generator.com.au/blog/do-i-add-gst-to-my-invoice/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css?v=6">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://invoice-generator.com.au/blog/do-i-add-gst-to-my-invoice/">
+  <meta property="og:title" content="Do I Add GST to My Invoice? The Rule, the Maths and the Edge Cases">
+  <meta property="og:description" content="Whether to charge GST, how much (add 10% or divide by 11), and what to do with GST-free items, overseas clients, +GST quotes and the day you register.">
+  <meta property="og:site_name" content="Invoice-Generator.com.au">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Do I Add GST to My Invoice? The Rule, the Maths and the Edge Cases",
+    "description": "A decision table for whether to charge GST on an Australian invoice, worked GST-exclusive and GST-inclusive maths, GST-free and input-taxed items, overseas clients, registration dates and rounding.",
+    "datePublished": "2026-10-10",
+    "dateModified": "2026-10-10",
+    "author": { "@type": "Organization", "name": "Invoice-Generator.com.au" },
+    "publisher": { "@type": "Organization", "name": "Invoice-Generator.com.au", "url": "https://invoice-generator.com.au/" },
+    "mainEntityOfPage": "https://invoice-generator.com.au/blog/do-i-add-gst-to-my-invoice/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Do I need to include GST on my invoice if I'm not registered?", "acceptedAnswer": { "@type": "Answer", "text": "No. If you're not registered for GST you can't charge it. Send a plain invoice headed 'Invoice' with no GST line. Check you're not required to register: that happens once your GST turnover reaches $75,000, or from day one for taxi and ride-sourcing drivers." } },
+      { "@type": "Question", "name": "How do I charge GST on an invoice?", "acceptedAnswer": { "@type": "Answer", "text": "If your prices exclude GST, add 10% of the taxable amount as a separate line: $850 + $85 GST = $935. If your prices already include GST, the GST is the total divided by 11: $935 ÷ 11 = $85. Head the document 'Tax Invoice'." } },
+      { "@type": "Question", "name": "Should I add GST for an overseas client?", "acceptedAnswer": { "@type": "Answer", "text": "Often not. The ATO says a supply of a service is usually GST-free if the recipient is outside Australia, and exported goods are GST-free if they leave Australia within 60 days of payment or invoice, whichever comes first. Specific rules apply, so check the ATO's GST-free sales page for your situation." } },
+      { "@type": "Question", "name": "What if I charged GST but I'm not registered?", "acceptedAnswer": { "@type": "Answer", "text": "The ATO says a supplier that isn't registered, or required to be, cannot charge GST, and the customer can't claim a GST credit for it. If you were required to register, you may owe GST on sales since that date plus penalties and interest. Talk to the ATO or a registered tax agent about correcting it." } },
+      { "@type": "Question", "name": "Do I add GST to invoices for sales before my GST registration date?", "acceptedAnswer": { "@type": "Answer", "text": "No. The ATO says that before the start date of your GST registration you aren't liable for GST on sales. Sales from the date of effect in your registration notice are taxable, so invoices for them are tax invoices with GST." } },
+      { "@type": "Question", "name": "How do I work out GST from a GST-inclusive price?", "acceptedAnswer": { "@type": "Answer", "text": "Divide the GST-inclusive price by 11. A $935 price includes $85 of GST and $850 before GST. Taking 10% of the inclusive price ($93.50) overstates the GST." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/" aria-label="Invoice-Generator.com.au home">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="3" y="1.5" width="20" height="23" rx="3" fill="#10715a"/><rect x="7" y="7" width="12" height="2" rx="1" fill="#fff"/><rect x="7" y="11.5" width="12" height="2" rx="1" fill="#fff" opacity="0.7"/><rect x="7" y="16" width="7" height="2" rx="1" fill="#fff" opacity="0.7"/></svg>
+        invoice-generator<span class="tld">.com.au</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Invoice Generator</a>
+        <a href="/invoice-generator-australia/">Australian Tax Invoice</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/invoicing-australia/">Guides &amp; Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="post-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> → <a href="/blog/">Blog</a> → Do I add GST to my invoice?</nav>
+    <span class="pc-tag">Australia · GST</span>
+    <h1>Do I Add GST to My Invoice? The Rule, the Maths and the Edge Cases</h1>
+    <div class="post-byline">
+      <span class="post-avatar" aria-hidden="true">IG</span>
+      <div class="pb-text">
+        <span class="pb-author">The Invoice-Generator.com.au team</span>
+        <span class="pb-meta">10 October 2026 &middot; 10 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="content article">
+    <p class="lead">Do I add GST to my invoice? Only if you're registered for GST and the item you're selling is a taxable sale. Then you add 10% to the GST-exclusive price, or, if your price already includes GST, one-eleventh of it is GST. If you're not registered, you don't add GST at all. Below: the decision table, the maths with real numbers, and the edge cases that catch people out.</p>
+
+    <div class="callout"><p>This page answers "should I charge GST, and how much?". For what a tax invoice must show (the seven ATO details and the $1,000 buyer rule), see <a href="/blog/tax-invoice-requirements-australia/">tax invoice requirements in Australia</a>.</p></div>
+
+    <h2>Do I need to add GST to my invoice? The decision table</h2>
+    <p>You add GST when two things are true: you're registered for GST (or required to be), and the sale is taxable. Most sales by a registered business in Australia are taxable unless they're GST-free or input-taxed.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Your situation</th><th>Add GST?</th><th>What you send</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Not registered, and not required to be</td><td><span class="no">No</span></td><td>"Invoice", no GST line</td></tr>
+          <tr><td>Not registered, but turnover has reached $75,000</td><td>Register within 21 days</td><td>Tax invoices from your date of effect</td></tr>
+          <tr><td>Registered, taxable sale in Australia</td><td><span class="yes">Yes, 10%</span></td><td>"Tax Invoice" showing the GST</td></tr>
+          <tr><td>Registered, GST-free item (e.g. basic food, exports)</td><td><span class="no">Not on that item</span></td><td>Tax invoice marking the item GST-free</td></tr>
+          <tr><td>Registered, input-taxed item (e.g. residential rent, lending)</td><td><span class="no">No</span></td><td>No GST on that item</td></tr>
+          <tr><td>Registered, service to a client outside Australia</td><td>Usually no</td><td>Tax invoice showing GST-free</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>These rows come from the ATO's pages on <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/when-to-charge-gst-and-when-not-to/taxable-sales" target="_blank" rel="noopener">taxable sales</a>, <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/when-to-charge-gst-and-when-not-to/gst-free-sales" target="_blank" rel="noopener">GST-free sales</a> and <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/when-to-charge-gst-and-when-not-to/input-taxed-sales" target="_blank" rel="noopener">input-taxed sales</a>. The rest of this page works through each row.</p>
+
+    <h2>Should I add GST to my invoice if I'm not registered?</h2>
+    <p>No. If you're not registered for GST you can't charge it, so your invoice shows no GST and is headed "Invoice", not "Tax Invoice". The total you invoice is the full amount the client pays.</p>
+    <p>The ATO says invoices from a business that isn't registered <a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/setting-up-and-managing-records/setting-up-your-business-invoices" target="_blank" rel="noopener">should not include the words "tax invoice"</a>. Registration is optional below $75,000 GST turnover, but it becomes compulsory once you reach it. Taxi and ride-sourcing drivers must register regardless of their turnover. Our guide to the <a href="/blog/gst-registration-threshold-australia/">GST registration threshold</a> shows how the rolling 12-month test works.</p>
+    <p>If you're under the threshold, the <a href="/no-gst-invoice-template/">no-GST invoice template</a> is set up for you: no GST line, "Invoice" heading, ABN field.</p>
+
+    <h2>How do I charge GST on an invoice? Add 10% or divide by 11</h2>
+    <p>If your prices are GST-exclusive, add 10% of the taxable total as its own line. If your prices already include GST, the GST is one-eleventh of the total. Both are correct; they're the same tax seen from opposite ends.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Method</th><th>Price before GST</th><th>GST</th><th>Total</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>GST-exclusive: add 10%</td><td>$850.00</td><td>$850 × 10% = $85.00</td><td>$935.00</td></tr>
+          <tr><td>GST-inclusive: divide by 11</td><td>$935 − $85 = $850.00</td><td>$935 ÷ 11 = $85.00</td><td>$935.00</td></tr>
+          <tr class="hl"><td>Wrong: 10% of the inclusive price</td><td>$841.50</td><td>$935 × 10% = $93.50</td><td>$935.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The last row is a common GST error: it overstates the GST by $8.50 on a $935 job. The 10% was added to the smaller pre-GST price, so to take it back out you divide by 11. The <a href="/gst-calculator/">GST calculator</a> does both directions.</p>
+    <p>If every item is taxable and your prices include GST, the ATO lets you skip the GST line and write <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" target="_blank" rel="noopener">"Total price includes GST"</a> instead. Our <a href="/blog/invoice-examples-australia/">invoice examples</a> show both layouts with real numbers.</p>
+
+    <h2>What if I quoted "+GST", or forgot to?</h2>
+    <p>If your quote said "+GST", the invoice adds 10% on top: a $2,400 + GST quote becomes $2,400 + $240 = $2,640. If you're registered and your quote gave a plain figure, expect the client to read it as the full price, which means the GST comes out of your $2,400.</p>
+    <p>On a $2,400 price that includes GST, the GST is $2,400 ÷ 11 = $218.18 and you keep $2,181.82. That $218.18 is the cost of leaving "+GST" off a quote. For prices shown to consumers, business.gov.au says the price you <a href="https://business.gov.au/legal/fair-trading/display-prices" target="_blank" rel="noopener">display or advertise must be the total price</a>, including GST. So for householders, quote the GST-inclusive figure and show the GST inside it. The <a href="/quote-generator/">quote generator</a> shows GST as its own line so there's no ambiguity.</p>
+
+    <h2>Do I include GST on GST-free or input-taxed items?</h2>
+    <p>No. GST-free and input-taxed items carry no GST, even on an invoice from a registered business. When one invoice mixes taxable and non-taxable items, the ATO says it must clearly show which items are taxable, the GST and the total.</p>
+    <p>GST-free items include most basic food, some education courses, some medical and health services, some childcare and exports, per the ATO's <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/when-to-charge-gst-and-when-not-to/gst-free-sales" target="_blank" rel="noopener">GST-free sales list</a>. Input-taxed sales are mainly financial supplies, like lending money, and selling or renting residential premises. The difference matters for your purchases: you can claim GST credits on inputs for GST-free sales, but not for input-taxed sales.</p>
+    <p>Worked example: a produce supplier sells a café $247.00 of fresh fruit and vegetables (GST-free) and $156.00 of carbonated water and chips (taxable). GST is 10% of $156.00 = $15.60, and the total is $247.00 + $156.00 + $15.60 = <strong>$418.60</strong>. Charging 10% on the whole $403.00 would have added $40.30 instead.</p>
+
+    <h2>Do I charge GST to overseas clients?</h2>
+    <p>Usually not. The ATO says a supply of a service is usually GST-free if the recipient is outside Australia, and exported goods are GST-free if they leave Australia within 60 days of payment or invoice, whichever comes first. There are specific rules behind "usually", so check before you rely on it.</p>
+    <p>A Melbourne designer who bills a New Zealand company for a logo would typically invoice $3,000 with GST of $0.00 and mark the line GST-free on the tax invoice. The ATO says specific rules decide whether a particular supply is GST-free, and its <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/when-to-charge-gst-and-when-not-to/gst-free-sales" target="_blank" rel="noopener">GST-free sales page</a> links the relevant rulings. If an overseas client is a large share of your income, it's worth a question to your tax agent.</p>
+
+    <h2>What happens if I charged GST but wasn't registered?</h2>
+    <p>You shouldn't have, and your client can't use it. The ATO says a supplier that isn't registered or required to be registered for GST <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/claiming-gst-credits/when-you-cannot-claim-a-gst-credit" target="_blank" rel="noopener">cannot charge GST</a>, and the customer can't claim a GST credit for that purchase.</p>
+    <p>What happens next depends on whether you should have been registered:</p>
+    <ul>
+      <li><strong>You were required to register</strong> (turnover reached $75,000, or you drive for a ride-sourcing app). The ATO says you <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst" target="_blank" rel="noopener">may have to pay GST on sales made since the date you were required to register</a>, even if you didn't include GST in the price, plus penalties and interest. Registration can be backdated, but not by more than 4 years except in cases of fraud or evasion.</li>
+      <li><strong>You weren't required to register.</strong> The extra 10% isn't GST the client can claim. The clean fix is to reissue the invoice without GST and refund or credit the difference. Confirm the right approach for your case with the ATO or a registered tax agent first.</li>
+    </ul>
+
+    <h2>What changes on my invoices the day I register for GST?</h2>
+    <p>Your registration notice gives a date of effect. Sales before that date have no GST; sales from that date are taxable, so you issue tax invoices, add GST and report it on your BAS. The ATO puts it this way: before the start date of your registration <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/guide-to-self-assessment-for-indirect-taxes/other-changes-relating-to-indirect-taxes" target="_blank" rel="noopener">you aren't liable for GST on sales</a> and can't claim GST credits on purchases.</p>
+    <p>Three things to change on the day:</p>
+    <ol>
+      <li><strong>Heading and GST line.</strong> Switch from "Invoice" to "Tax Invoice" and set GST to 10%. Keep your invoice numbering running; there's no need to restart it.</li>
+      <li><strong>Open quotes.</strong> Any quote you sent before registering at a flat price, for work you'll do after the date of effect, now has GST inside it unless the quote allows you to add it. Re-quote with "+GST" where you can.</li>
+      <li><strong>Recurring clients.</strong> Tell them the price is changing from, say, $1,000 to $1,000 + $100 GST before the first tax invoice lands. Registered business clients can claim the $100 back; householders can't.</li>
+    </ol>
+    <p>If a job straddles your date of effect, with work before it and the invoice after, ask your tax agent how to split it rather than guessing.</p>
+    <div class="callout"><p>Once you're registered, every invoice feeds your BAS: you need the GST on each one right, and you need to know what's been paid. If you're tracking that in a spreadsheet next to a pile of PDFs, <a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=blog-do-i-add-gst-to-my-invoice-midpost" target="_blank" rel="noopener">InvoiceSonic</a> (from the same team) has GST fields on its free plan. Pro (A$19/month) adds overdue and aging tracking, so you can see what's paid and what's still outstanding before BAS is due.</p></div>
+
+    <h2>How do I round GST on an invoice?</h2>
+    <p>Round GST to the nearest cent, with half a cent rounding up. With one taxable item that's all there is to it. With several, the ATO allows two methods, and you and your customer don't have to use the same one.</p>
+    <ul>
+      <li><strong>One item:</strong> $47.35 × 10% = $4.735, which rounds to <strong>$4.74</strong>. A $19.95 GST-inclusive price includes $19.95 ÷ 11 = $1.8136…, so <strong>$1.81</strong>.</li>
+      <li><strong>Total invoice rule:</strong> work out the GST on each taxable item, total it, then round. Items of $12.45, $8.35 and $3.15 give $1.245 + $0.835 + $0.315 = $2.395, which rounds to <strong>$2.40</strong>.</li>
+      <li><strong>Taxable supply rule:</strong> work out the GST on each item, rounding each one where your system can't hold the extra decimals, then add them and round the total. Rounding those same three lines to the cent first gives $1.25 + $0.84 + $0.32 = <strong>$2.41</strong>.</li>
+    </ul>
+    <p>A one-cent gap like that is normal, and both rules come from the ATO's <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" target="_blank" rel="noopener">rounding of GST</a> guidance. Pick one method and use it consistently.</p>
+
+    <h2>GST invoice requirements: what else must the invoice show?</h2>
+    <p>Once you're charging GST, the document has to be a valid tax invoice: "Tax Invoice", your name and ABN, the date, the items with quantity and price, the GST, and which items are taxable. Add the buyer's name or ABN from $1,000. If a customer asks for a tax invoice for a sale over $82.50 including GST, you must provide one within 28 days.</p>
+    <p>The full checklist is in <a href="/blog/tax-invoice-requirements-australia/">tax invoice requirements in Australia</a>. The quickest way to get both the GST and the format right is the <a href="/invoice-generator-australia/">free Australian tax invoice generator</a>. It adds 10% or extracts one-eleventh, depending on whether you tick "Prices include GST", and checks the ATO fields as you type.</p>
+
+    <h2>The short answer</h2>
+    <p>Registered and selling something taxable: add GST, either +10% on GST-exclusive prices or ÷11 on GST-inclusive ones. Not registered: no GST, plain invoice. GST-free, input-taxed and most overseas services: no GST on those lines. The <a href="/invoice-generator-australia/">tax invoice generator</a> and the <a href="/no-gst-invoice-template/">no-GST template</a> cover both sides, free and without signup.</p>
+    <p>When you're invoicing every week and BAS comes round each quarter, the PDF is only half the job. <a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=blog-do-i-add-gst-to-my-invoice-closing" target="_blank" rel="noopener">InvoiceSonic</a> keeps GST on every invoice and every client in one place on the free plan. Pro (A$19/month, 7-day trial) tracks what's overdue and sends automatic reminders, so the GST you've charged turns into money in the bank before you have to pay it.</p>
+
+    <p><small>This article is general information, not tax advice. For your circumstances, check the <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst" target="_blank" rel="noopener">ATO's registering for GST page</a> or a registered tax agent.</small></p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Do I need to include GST on my invoice if I'm not registered?</summary><p>No. If you're not registered for GST you can't charge it. Send a plain invoice headed 'Invoice' with no GST line. Check you're not required to register: that happens once your GST turnover reaches $75,000, or from day one for taxi and ride-sourcing drivers.</p></details>
+      <details><summary>How do I charge GST on an invoice?</summary><p>If your prices exclude GST, add 10% of the taxable amount as a separate line: $850 + $85 GST = $935. If your prices already include GST, the GST is the total divided by 11: $935 ÷ 11 = $85. Head the document 'Tax Invoice'.</p></details>
+      <details><summary>Should I add GST for an overseas client?</summary><p>Often not. The ATO says a supply of a service is usually GST-free if the recipient is outside Australia, and exported goods are GST-free if they leave Australia within 60 days of payment or invoice, whichever comes first. Specific rules apply, so check the ATO's GST-free sales page for your situation.</p></details>
+      <details><summary>What if I charged GST but I'm not registered?</summary><p>The ATO says a supplier that isn't registered, or required to be, cannot charge GST, and the customer can't claim a GST credit for it. If you were required to register, you may owe GST on sales since that date plus penalties and interest. Talk to the ATO or a registered tax agent about correcting it.</p></details>
+      <details><summary>Do I add GST to invoices for sales before my GST registration date?</summary><p>No. The ATO says that before the start date of your GST registration you aren't liable for GST on sales. Sales from the date of effect in your registration notice are taxable, so invoices for them are tax invoices with GST.</p></details>
+      <details><summary>How do I work out GST from a GST-inclusive price?</summary><p>Divide the GST-inclusive price by 11. A $935 price includes $85 of GST and $850 before GST. Taking 10% of the inclusive price ($93.50) overstates the GST.</p></details>
+    </div>
+
+    <div class="cta-band">
+      <h2>Add GST the right way, automatically</h2>
+      <p>10% GST or "includes GST", ABN field, live ATO checklist. Free, no signup.</p>
+      <a class="btn btn-primary" href="/invoice-generator-australia/" style="text-decoration:none; display:inline-flex; width:auto; padding:14px 34px;">Open the Australian generator</a>
+    </div>
+  </article>
+
+  <nav class="post-nav" aria-label="More posts">
+    <a href="/blog/invoice-examples-australia/">← Invoice examples Australia</a>
+    <a href="/blog/gst-registration-threshold-australia/">Next: The GST registration threshold →</a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div>
+        <a class="brand" href="/">invoice-generator<span class="tld">.com.au</span></a>
+        <p class="fineprint">The free invoice generator that respects your time and your data. No signup, no watermarks, no ads — your invoice data never leaves your browser.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="/">Invoice Generator</a></li>
+            <li><a href="/invoice-generator-australia/">Invoice Generator Australia</a></li>
+            <li><a href="/gst-calculator/">GST Calculator</a></li>
+            <li><a href="/quote-generator/">Quote Generator</a></li>
+            <li><a href="/receipt-generator/">Receipt Generator</a></li>
+            <li><a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=footer" target="_blank" rel="noopener">InvoiceSonic — invoicing app</a></li>
+          </ul>
+        </div>
+        <div><h3>Templates</h3><ul>
+            <li><a href="/abn-invoice-template/">ABN Invoice Template</a></li>
+            <li><a href="/no-gst-invoice-template/">No-GST Invoice Template</a></li>
+            <li><a href="/tax-invoice-template/">Tax Invoice Template</a></li>
+            <li><a href="/sole-trader-invoice-generator/">Sole Trader Invoice</a></li>
+            <li><a href="/tradie-invoice-template-australia/">Tradie Invoice Template</a></li>
+            <li><a href="/invoice-template-australia/">All Invoice Templates</a></li>
+          </ul></div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About us</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/blog.js?v=1" defer></script>
+</body>
+</html>
