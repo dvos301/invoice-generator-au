@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DMRRWY61N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7DMRRWY61N');
+  </script>
+  <title>How to Calculate GST | Formulas, Examples &amp; Table | Invoice-Generator.com.au</title>
+  <meta name="description" content="How to calculate GST in Australia: ×1.1 to add it, ÷11 to find it, ÷1.1 for the ex-GST price. Quick-reference table, mixed baskets, rounding, Excel formulas.">
+  <link rel="canonical" href="https://invoice-generator.com.au/blog/how-to-calculate-gst/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css?v=6">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://invoice-generator.com.au/blog/how-to-calculate-gst/">
+  <meta property="og:title" content="How to Calculate GST in Australia: Formulas, Examples and a Quick-Reference Table">
+  <meta property="og:description" content="Add GST (×1.1), remove it (÷11), find the GST component, handle GST-free items, round correctly and hit a GST-inclusive target price. With Excel formulas.">
+  <meta property="og:site_name" content="Invoice-Generator.com.au">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Calculate GST in Australia: Formulas, Examples and a Quick-Reference Table",
+  "description": "Add GST (×1.1), remove it (÷11), find the GST component, handle GST-free items, round correctly and hit a GST-inclusive target price. With Excel formulas.",
+  "datePublished": "2026-10-16",
+  "dateModified": "2026-10-16",
+  "author": {
+    "@type": "Organization",
+    "name": "Invoice-Generator.com.au"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Invoice-Generator.com.au",
+    "url": "https://invoice-generator.com.au/"
+  },
+  "mainEntityOfPage": "https://invoice-generator.com.au/blog/how-to-calculate-gst/"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate GST in Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To add GST, multiply the GST-exclusive price by 1.1 (or by 0.1 for the GST amount alone). To find the GST inside a GST-inclusive price, divide it by 11. To get the price before GST, divide the inclusive price by 1.1 or subtract the GST from it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I work out the GST component of a price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the GST-inclusive price by 11. A $2,640 price includes $240 of GST, and the price before GST is $2,640 − $240 = $2,400."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I just take 10% off the GST-inclusive price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because GST is 10% of the smaller pre-GST price. Taking 10% off a $1,100 inclusive price gives $110 of GST and $990 ex-GST, when the correct figures are $100 and $1,000."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate GST when some items are GST-free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate GST only on the taxable items. A $457.50 invoice with $320 of GST-free produce and $125 of taxable goods has GST of $12.50, not 10% of the whole $445."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I round GST?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Round to the nearest cent, with half a cent rounding up. With several taxable items the ATO allows the total invoice rule or the taxable supply rule, which can differ by a cent. Use one method consistently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Excel formula for GST?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For the GST to add to an ex-GST price in A2, use =ROUND(A2*0.1,2). For the GST inside an inclusive price, use =ROUND(A2/11,2). For the price before GST, use =A2-ROUND(A2/11,2)."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/" aria-label="Invoice-Generator.com.au home">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="3" y="1.5" width="20" height="23" rx="3" fill="#10715a"/><rect x="7" y="7" width="12" height="2" rx="1" fill="#fff"/><rect x="7" y="11.5" width="12" height="2" rx="1" fill="#fff" opacity="0.7"/><rect x="7" y="16" width="7" height="2" rx="1" fill="#fff" opacity="0.7"/></svg>
+        invoice-generator<span class="tld">.com.au</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Invoice Generator</a>
+        <a href="/invoice-generator-australia/">Australian Tax Invoice</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/invoicing-australia/">Guides &amp; Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="post-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> → <a href="/blog/">Blog</a> → How to calculate GST</nav>
+    <span class="pc-tag">Australia · GST</span>
+    <h1>How to Calculate GST in Australia: Formulas, Worked Examples and a Quick-Reference Table</h1>
+    <div class="post-byline">
+      <span class="post-avatar" aria-hidden="true">IG</span>
+      <div class="pb-text">
+        <span class="pb-author">The Invoice-Generator.com.au team</span>
+        <span class="pb-meta">16 October 2026 &middot; 10 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="content article">
+    <p class="lead">How to calculate GST in Australia comes down to three moves: multiply a GST-exclusive price by 1.1 to add GST, divide a GST-inclusive price by 11 to find the GST inside it, and divide by 1.1 to get the price before GST. Below are the formulas, a quick-reference table, worked examples for mixed baskets and target prices, spreadsheet formulas and the mistakes that put the wrong figure on an invoice. If you just want the answer for one number, the <a href="/gst-calculator/">GST calculator</a> does both directions instantly.</p>
+
+    <div class="callout"><p>This page is the maths. Whether you should charge GST at all (registration, GST-free items, overseas clients) is covered in <a href="/blog/do-i-add-gst-to-my-invoice/">do I add GST to my invoice?</a></p></div>
+
+    <h2>What are the GST formulas in Australia?</h2>
+    <p>GST is 10% of the GST-exclusive price. That one fact gives you every formula: the GST-inclusive price is 110% of the exclusive price, so the GST is 10/110, or one-eleventh, of the inclusive price.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>You have</th><th>You want</th><th>Formula</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Price before GST</td><td>GST amount</td><td>Price × 0.1</td><td>$480 × 0.1 = $48</td></tr>
+          <tr><td>Price before GST</td><td>Price including GST</td><td>Price × 1.1</td><td>$480 × 1.1 = $528</td></tr>
+          <tr><td>Price including GST</td><td>GST component</td><td>Price ÷ 11</td><td>$528 ÷ 11 = $48</td></tr>
+          <tr><td>Price including GST</td><td>Price before GST</td><td>Price ÷ 1.1</td><td>$528 ÷ 1.1 = $480</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Before you calculate anything, decide which column your number belongs in. "$528" on a supplier's receipt is almost always GST-inclusive. "$480 + GST" on a quote is exclusive. Most wrong GST figures start with the wrong starting point, not bad arithmetic.</p>
+
+    <h2>How do I add GST to a price?</h2>
+    <p>Multiply the GST-exclusive price by 1.1. If you need the GST as its own line on a tax invoice, multiply by 0.1 instead and add it to the subtotal. A $95 hourly rate becomes $95 + $9.50 GST = $104.50.</p>
+    <p>On an invoice, work out GST on the subtotal of taxable items, not on each hour or each unit, unless your software does it per line. Eight hours at $95 is $760, GST is $76.00, and the total is $836.00. The same number comes out either way when every line is a whole number of cents, but per-line rounding can drift by a cent on odd amounts (see rounding below).</p>
+
+    <h2>How do I work out the GST component of a GST-inclusive price?</h2>
+    <p>Divide the GST-inclusive price by 11. That's the GST component the ATO expects to see on a tax invoice, and the figure you claim as a GST credit when you buy. A $2,640 inclusive price contains $2,640 ÷ 11 = $240 of GST.</p>
+    <p>To get the price before GST, either divide by 1.1 ($2,640 ÷ 1.1 = $2,400) or subtract the GST from the total ($2,640 − $240 = $2,400). Subtracting is safer once rounding is involved, because the GST and the ex-GST figure then always add back to the exact total.</p>
+
+    <h2>Why divide by 11 and not multiply by 0.9 or take off 10%?</h2>
+    <p>Because the 10% was calculated on the smaller, pre-GST price. Taking 10% off the bigger, GST-inclusive price removes too much. On a $1,100 invoice the GST is $100, not $110, and the price before GST is $1,000, not $990.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Method on $1,100 incl. GST</th><th>GST it gives</th><th>Ex-GST price it gives</th><th>Error</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>÷ 11 (correct)</td><td>$100.00</td><td>$1,000.00</td><td>None</td></tr>
+          <tr class="hl"><td>Take 10% of the total</td><td>$110.00</td><td>$990.00</td><td>GST $10 too high</td></tr>
+          <tr class="hl"><td>Multiply by 0.9</td><td>$110.00 (by subtraction)</td><td>$990.00</td><td>Same $10 error</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A $10 error on one invoice looks small. Across a quarter of supplier receipts it means you're claiming GST credits you aren't entitled to, and your BAS won't match your tax invoices.</p>
+
+    <h2>GST quick-reference table</h2>
+    <p>Each amount below is shown two ways: first as a GST-exclusive price you add GST to, then as a GST-inclusive price you take GST out of. All figures are rounded to the cent.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Amount</th><th>If exclusive: GST</th><th>If exclusive: total incl. GST</th><th>If inclusive: GST (÷11)</th><th>If inclusive: price before GST</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>$10</td><td>$1.00</td><td>$11.00</td><td>$0.91</td><td>$9.09</td></tr>
+          <tr><td>$55</td><td>$5.50</td><td>$60.50</td><td>$5.00</td><td>$50.00</td></tr>
+          <tr><td>$110</td><td>$11.00</td><td>$121.00</td><td>$10.00</td><td>$100.00</td></tr>
+          <tr><td>$1,000</td><td>$100.00</td><td>$1,100.00</td><td>$90.91</td><td>$909.09</td></tr>
+          <tr><td>$1,100</td><td>$110.00</td><td>$1,210.00</td><td>$100.00</td><td>$1,000.00</td></tr>
+          <tr><td>$2,640</td><td>$264.00</td><td>$2,904.00</td><td>$240.00</td><td>$2,400.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Notice the pattern: any inclusive price that's a multiple of $11 gives a clean GST figure. That's why $55, $110 and $1,100 come out in whole dollars and $10 and $1,000 don't.</p>
+
+    <h2>How do I calculate GST on an invoice with GST-free items?</h2>
+    <p>Calculate GST only on the taxable lines, never on the whole total. Add up the taxable items, take 10% (or divide the inclusive figure by 11), and leave GST-free lines out of the GST calculation. The ATO says a tax invoice that mixes taxable and non-taxable items must clearly show which items are taxable, the GST and the total.</p>
+    <p><strong>GST-exclusive example.</strong> A wholesaler supplies a café with fresh produce ($320.00, GST-free), cleaning products ($80.00, taxable) and paper cups ($45.00, taxable).</p>
+    <ul>
+      <li>Taxable subtotal: $80.00 + $45.00 = $125.00</li>
+      <li>GST: $125.00 × 0.1 = $12.50</li>
+      <li>Invoice total: $320.00 + $125.00 + $12.50 = <strong>$457.50</strong></li>
+    </ul>
+    <p>Taking 10% of the full $445.00 would have charged $44.50 of GST, $32.00 too much.</p>
+    <p><strong>GST-inclusive example (working out a receipt).</strong> A supermarket receipt totals $86.40, of which $52.80 is taxable items and $33.60 is GST-free food. The GST is $52.80 ÷ 11 = <strong>$4.80</strong>. Dividing the whole $86.40 by 11 gives $7.85, which would overclaim $3.05 in GST credits. Many receipts mark the taxable items or print the GST total at the bottom; use that figure rather than recalculating.</p>
+
+    <div class="callout"><p>Calculating GST is the easy part. Keeping every invoice's GST in one place for BAS time, and knowing which ones are still unpaid, is where spreadsheets fall over. <a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=blog-how-to-calculate-gst-midpost" target="_blank" rel="noopener">InvoiceSonic</a> (from the same team) has GST fields and reusable clients on its free plan. Pro (A$19/month) adds overdue and aging tracking and automatic reminders at 7, 14 and 30 days.</p></div>
+
+    <h2>How do I round GST?</h2>
+    <p>Round GST to the nearest cent, with half a cent rounding up. With one taxable item that's the whole rule. With several taxable items the ATO allows two methods, which can differ by a cent, and you and your customer don't have to use the same one.</p>
+    <ul>
+      <li><strong>Total invoice rule:</strong> work out the GST on each taxable item without rounding, add them, then round the total. Items of $2.45, $3.65 and $1.25 give $0.245 + $0.365 + $0.125 = $0.735, which rounds to <strong>$0.74</strong>.</li>
+      <li><strong>Taxable supply rule:</strong> work out the GST on each item, rounding each one where your system can't hold the extra decimals, then add them. Rounded per line, the same items give $0.25 + $0.37 + $0.13 = <strong>$0.75</strong>.</li>
+    </ul>
+    <p>Both come from the ATO's <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" target="_blank" rel="noopener">rounding of GST</a> guidance. Pick one and use it on every invoice. On normal invoice amounts the difference is a cent or two, and it only shows up when lines have half-cent GST.</p>
+
+    <h2>How do I work backwards from a GST-inclusive target price?</h2>
+    <p>Divide the target by 1.1 to get the ex-GST price, but don't then add 10% back on and expect the target. Rounding can push the total a cent over. The cleaner fix is to enter the target as a GST-inclusive price and let the GST be one-eleventh of it.</p>
+    <p>Say you want a customer to pay exactly $500. $500 ÷ 1.1 = $454.5454…, which rounds to $454.55. Add 10%: $45.455 rounds to $45.46, and the total is <strong>$500.01</strong>. Enter $500 as GST-inclusive instead and the invoice shows GST of $500 ÷ 11 = $45.45, ex-GST $454.55, total $500.00.</p>
+    <p>The opposite target works the other way. If you need $500 in your pocket before GST, charge $500 + $50 GST = $550. Quoting a round $500 "including GST" leaves you $454.55. The <a href="/gst-calculator/">free Australian GST calculator</a> handles both: switch between add and remove GST and the figures update as you type.</p>
+
+    <h2>Excel and Google Sheets GST formulas</h2>
+    <p>The same formulas work in Excel and Google Sheets. Wrap GST in ROUND so the cents on your spreadsheet match the cents on your invoice, and get the ex-GST figure by subtraction so the columns always add up.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Task (amount in A2)</th><th>Formula</th><th>A2 = 2640 gives</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>GST to add to an ex-GST price</td><td><code>=ROUND(A2*0.1,2)</code></td><td>264.00</td></tr>
+          <tr><td>Total including GST</td><td><code>=A2+ROUND(A2*0.1,2)</code></td><td>2904.00</td></tr>
+          <tr><td>GST inside an inclusive price</td><td><code>=ROUND(A2/11,2)</code></td><td>240.00</td></tr>
+          <tr><td>Price before GST</td><td><code>=A2-ROUND(A2/11,2)</code></td><td>2400.00</td></tr>
+          <tr><td>GST on taxable rows only (amounts in B, "Taxable"/"GST-free" in C)</td><td><code>=ROUND(SUMIF(C:C,"Taxable",B:B)*0.1,2)</code></td><td>depends on rows</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The SUMIF version is the spreadsheet answer to mixed baskets: tag each line as taxable or GST-free and the GST only counts the taxable ones. If you invoice from a spreadsheet, our guide to <a href="/blog/invoice-template-word-excel/">invoice templates in Word and Excel</a> covers the layout side.</p>
+
+    <h2>How do I show the GST on a tax invoice?</h2>
+    <p>Show the GST as its own line under the subtotal, or, if every item is taxable and the GST is exactly one-eleventh of the total, write "Total price includes GST". The ATO accepts either on a <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" target="_blank" rel="noopener">tax invoice</a>. Once there's a GST-free item on the invoice, show the GST as a figure and mark which lines are taxable.</p>
+    <p>A <a href="/tax-invoice-template/">tax invoice template</a> with the subtotal, GST and total lines already laid out saves you rebuilding this each time. If you're not registered for GST, there's no GST to calculate: use a <a href="/no-gst-invoice-template/">no GST invoice template</a> headed "Invoice", not "Tax Invoice". For the field-by-field process of putting a GST invoice together, see <a href="/blog/how-to-make-a-tax-invoice/">how to make a tax invoice</a>.</p>
+
+    <h2>Common GST calculation mistakes</h2>
+    <ol>
+      <li><strong>Taking 10% off an inclusive price.</strong> $1,100 includes $100 of GST, not $110. Divide by 11.</li>
+      <li><strong>GST on GST-free lines.</strong> Most basic food, exports and some health and education services carry no GST. Calculate on the taxable subtotal only.</li>
+      <li><strong>Charging GST when you're not registered.</strong> The calculation is right but the GST shouldn't be there. Check the <a href="/blog/gst-registration-threshold-australia/">GST registration threshold</a> first.</li>
+      <li><strong>Adding GST to a price that already includes it.</strong> A supplier's $220 inclusive receipt doesn't become $242. If the source says "inc GST", divide; if it says "+GST" or "ex GST", multiply.</li>
+      <li><strong>Back-solving a round inclusive price and getting $500.01.</strong> Enter the target as GST-inclusive rather than adding 10% to a rounded ex-GST figure.</li>
+      <li><strong>Rounding each line one way and the total another.</strong> Pick the total invoice rule or the taxable supply rule and stick to it.</li>
+    </ol>
+    <p>Our <a href="/blog/invoice-examples-australia/">invoice examples</a> show finished GST-inclusive and GST-exclusive invoices, so you can check your layout against a real one.</p>
+
+    <h2>The short version</h2>
+    <p>Adding GST: × 1.1, or × 0.1 for the GST line. Finding GST in an inclusive price: ÷ 11. Price before GST: ÷ 1.1, or the total minus the GST. GST-free lines stay out of it, round to the nearest cent, and enter round targets as GST-inclusive. The free calculator below does all of it, with no signup.</p>
+    <p>Once you're sending GST invoices every week, the maths is the small part and getting paid is the big one. <a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=blog-how-to-calculate-gst-closing" target="_blank" rel="noopener">InvoiceSonic</a> keeps GST on every invoice and client in one place for free, and Pro (A$19/month, 7-day trial) chases late payers with automatic reminders.</p>
+
+    <p><small>This article is general information, not tax advice. For your circumstances, check the <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" target="_blank" rel="noopener">ATO's tax invoices page</a> or a registered tax agent.</small></p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How do I calculate GST in Australia?</summary><p>To add GST, multiply the GST-exclusive price by 1.1 (or by 0.1 for the GST amount alone). To find the GST inside a GST-inclusive price, divide it by 11. To get the price before GST, divide the inclusive price by 1.1 or subtract the GST from it.</p></details>
+      <details><summary>How do I work out the GST component of a price?</summary><p>Divide the GST-inclusive price by 11. A $2,640 price includes $240 of GST, and the price before GST is $2,640 − $240 = $2,400.</p></details>
+      <details><summary>Why can't I just take 10% off the GST-inclusive price?</summary><p>Because GST is 10% of the smaller pre-GST price. Taking 10% off a $1,100 inclusive price gives $110 of GST and $990 ex-GST, when the correct figures are $100 and $1,000.</p></details>
+      <details><summary>How do I calculate GST when some items are GST-free?</summary><p>Calculate GST only on the taxable items. A $457.50 invoice with $320 of GST-free produce and $125 of taxable goods has GST of $12.50, not 10% of the whole $445.</p></details>
+      <details><summary>How do I round GST?</summary><p>Round to the nearest cent, with half a cent rounding up. With several taxable items the ATO allows the total invoice rule or the taxable supply rule, which can differ by a cent. Use one method consistently.</p></details>
+      <details><summary>What is the Excel formula for GST?</summary><p>For the GST to add to an ex-GST price in A2, use =ROUND(A2*0.1,2). For the GST inside an inclusive price, use =ROUND(A2/11,2). For the price before GST, use =A2-ROUND(A2/11,2).</p></details>
+    </div>
+
+    <div class="cta-band">
+      <h2>Work out GST in one click</h2>
+      <p>Add or remove 10% GST, see the GST component and the ex-GST price. Free, no signup.</p>
+      <a class="btn btn-primary" href="/gst-calculator/" style="text-decoration:none; display:inline-flex; width:auto; padding:14px 34px;">Open the GST calculator</a>
+    </div>
+  </article>
+
+  <nav class="post-nav" aria-label="More posts">
+    <a href="/blog/do-i-add-gst-to-my-invoice/">← Do I add GST to my invoice?</a>
+    <a href="/blog/how-to-make-a-tax-invoice/">Next: How to make a tax invoice →</a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div>
+        <a class="brand" href="/">invoice-generator<span class="tld">.com.au</span></a>
+        <p class="fineprint">The free invoice generator that respects your time and your data. No signup, no watermarks, no ads — your invoice data never leaves your browser.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="/">Invoice Generator</a></li>
+            <li><a href="/invoice-generator-australia/">Invoice Generator Australia</a></li>
+            <li><a href="/gst-calculator/">GST Calculator</a></li>
+            <li><a href="/quote-generator/">Quote Generator</a></li>
+            <li><a href="/receipt-generator/">Receipt Generator</a></li>
+            <li><a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=footer" target="_blank" rel="noopener">InvoiceSonic — invoicing app</a></li>
+          </ul>
+        </div>
+        <div><h3>Templates</h3><ul>
+            <li><a href="/abn-invoice-template/">ABN Invoice Template</a></li>
+            <li><a href="/no-gst-invoice-template/">No-GST Invoice Template</a></li>
+            <li><a href="/tax-invoice-template/">Tax Invoice Template</a></li>
+            <li><a href="/sole-trader-invoice-generator/">Sole Trader Invoice</a></li>
+            <li><a href="/tradie-invoice-template-australia/">Tradie Invoice Template</a></li>
+            <li><a href="/invoice-template-australia/">All Invoice Templates</a></li>
+          </ul></div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About us</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/blog.js?v=1" defer></script>
+</body>
+</html>
