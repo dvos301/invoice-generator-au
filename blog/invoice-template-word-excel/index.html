@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DMRRWY61N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7DMRRWY61N');
+  </script>
+  <title>Invoice Template Word &amp; Excel | GST Formulas That Work | Invoice-Generator.com.au</title>
+  <meta name="description" content="Invoice template Word or Excel? Set one up for Australia: ABN, GST line, Excel GST formulas that round correctly, numbering, and when to switch.">
+  <link rel="canonical" href="https://invoice-generator.com.au/blog/invoice-template-word-excel/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css?v=6">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://invoice-generator.com.au/blog/invoice-template-word-excel/">
+  <meta property="og:title" content="Invoice Template Word &amp; Excel: Setting One Up Properly for Australia">
+  <meta property="og:description" content="Word vs Excel vs Google Sheets vs an online generator for Australian invoices, with the exact GST formulas, a numbering register and the mistakes that cost money.">
+  <meta property="og:site_name" content="Invoice-Generator.com.au">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Invoice Template Word & Excel: Setting One Up Properly for Australia",
+    "description": "An honest comparison of Word, Excel, Google Docs/Sheets and an online generator for Australian invoices, with Excel GST formulas, a numbering register, Word table formulas and the common spreadsheet mistakes.",
+    "datePublished": "2026-10-16",
+    "dateModified": "2026-10-16",
+    "author": { "@type": "Organization", "name": "Invoice-Generator.com.au" },
+    "publisher": { "@type": "Organization", "name": "Invoice-Generator.com.au", "url": "https://invoice-generator.com.au/" },
+    "mainEntityOfPage": "https://invoice-generator.com.au/blog/invoice-template-word-excel/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is a Word invoice template acceptable in Australia?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The ATO cares about what the invoice shows, not the software that made it. A Word invoice is valid as long as it has the required details: your name and ABN, the date, a description, the price, and if you're registered for GST, the words 'Tax Invoice' and the GST amount." } },
+      { "@type": "Question", "name": "What is the Excel formula for 10% GST?", "acceptedAnswer": { "@type": "Answer", "text": "For GST-exclusive prices use =ROUND(D8*0.1,2), where D8 is the subtotal. For GST-inclusive prices the GST already in the price is =ROUND(D8/11,2). On an $836.40 subtotal the first gives $83.64 and a total of $920.04; $920.04 divided by 11 is $83.64." } },
+      { "@type": "Question", "name": "How do I stop overwriting my last invoice in Word or Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Save the blank layout as a template file (.dotx in Word, .xltx in Excel). Opening a template creates a new untitled copy, so you can't save over the original or last month's invoice by accident. Then save each finished invoice as a PDF named with its invoice number." } },
+      { "@type": "Question", "name": "Can Google Docs calculate invoice totals?", "acceptedAnswer": { "@type": "Answer", "text": "No. Google Docs tables don't calculate, so totals and GST are typed by hand. Google Sheets uses the same formulas as Excel, including =ROUND(D8*0.1,2) for GST, and can download a PDF from File, Download." } },
+      { "@type": "Question", "name": "When should I stop using a spreadsheet for invoices?", "acceptedAnswer": { "@type": "Answer", "text": "When you're re-typing the same client details every week, losing track of which invoice number is next, or chasing payments from memory. A spreadsheet makes a document; it doesn't remember clients, track what's paid or send reminders." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/" aria-label="Invoice-Generator.com.au home">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="3" y="1.5" width="20" height="23" rx="3" fill="#10715a"/><rect x="7" y="7" width="12" height="2" rx="1" fill="#fff"/><rect x="7" y="11.5" width="12" height="2" rx="1" fill="#fff" opacity="0.7"/><rect x="7" y="16" width="7" height="2" rx="1" fill="#fff" opacity="0.7"/></svg>
+        invoice-generator<span class="tld">.com.au</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Invoice Generator</a>
+        <a href="/invoice-generator-australia/">Australian Tax Invoice</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/invoicing-australia/">Guides &amp; Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="post-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> → <a href="/blog/">Blog</a> → Invoice template Word &amp; Excel</nav>
+    <span class="pc-tag">Australia · Templates</span>
+    <h1>Invoice Template Word &amp; Excel: Setting One Up Properly for Australia</h1>
+    <div class="post-byline">
+      <span class="post-avatar" aria-hidden="true">IG</span>
+      <div class="pb-text">
+        <span class="pb-author">The Invoice-Generator.com.au team</span>
+        <span class="pb-meta">16 October 2026 &middot; 10 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="content article">
+    <p class="lead">Invoice template Word or Excel: both can produce a valid Australian invoice, because the ATO cares about what's on the page, not the program that made it. Word is easier to lay out but can't be trusted with maths. Excel calculates GST properly once the formulas are right. Below are the exact formulas, the setup for each, and the point where a spreadsheet stops being the cheap option. If you'd rather skip the setup, our <a href="/invoice-template-australia/">invoice template Australia</a> page fills in on screen and downloads a PDF.</p>
+
+    <div class="callout"><p>We don't offer .docx or .xlsx downloads. This guide shows you how to build your own in Word or Excel properly, and compares that with an online generator, so you can pick the one that fits how often you invoice.</p></div>
+
+    <h2>Word vs Excel vs Google Sheets vs online: which invoice template is best?</h2>
+    <p>Use Word or Google Docs if you send a handful of invoices a year and are happy to add up totals yourself. Use Excel or Google Sheets if you want GST calculated for you. Use an online generator if you want GST, layout and PDF done without building anything.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th></th><th>Word</th><th>Excel</th><th>Google Docs / Sheets</th><th>Online generator</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Calculates GST</td><td>Only with table fields you update by hand (F9)</td><td><span class="yes">Yes</span>, with formulas</td><td>Docs: no. Sheets: <span class="yes">yes</span></td><td><span class="yes">Yes</span>, built in</td></tr>
+          <tr><td>Layout effort</td><td>Low</td><td>Medium to high</td><td>Docs low, Sheets medium</td><td>None</td></tr>
+          <tr><td>Risk of overwriting last invoice</td><td>High unless saved as .dotx</td><td>High unless saved as .xltx</td><td>Medium (Make a copy each time)</td><td>Low</td></tr>
+          <tr><td>Invoice numbering</td><td>Manual</td><td>Manual, or a register sheet</td><td>Manual, or a register sheet</td><td>Number field on each invoice</td></tr>
+          <tr><td>PDF for the client</td><td>Save as PDF</td><td>Save as PDF (check page breaks)</td><td>File → Download → PDF</td><td>Download PDF</td></tr>
+          <tr><td>Cost</td><td>Needs Microsoft 365 or Office</td><td>Needs Microsoft 365 or Office</td><td>Free with a Google account</td><td>Free, no signup</td></tr>
+          <tr><td>Best for</td><td>A few invoices a year</td><td>Regular invoicing, one person</td><td>Same, working across devices</td><td>Anyone who'd rather not build one</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>What does an Australian invoice template need?</h2>
+    <p>Every Australian invoice needs your name or business name, your ABN, the date, a description of the work or goods, the quantity and price, and the total. If you're registered for GST, add the words "Tax Invoice", the GST amount (or "Total price includes GST" when every item is taxable), and which items are taxable.</p>
+    <p>Two extras apply to tax invoices: for sales of $1,000 or more, the buyer's identity or ABN must be on it, and the document should make the seller's identity clear. The ATO lists the rules on its <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" target="_blank" rel="noopener">tax invoices page</a>, and our guide to <a href="/blog/tax-invoice-requirements-australia/">tax invoice requirements in Australia</a> turns them into a checklist. Build these fields into your template once and you can't forget them later:</p>
+    <ul>
+      <li><strong>Header:</strong> "Tax Invoice" (or "Invoice" if not registered for GST), invoice number, issue date, due date.</li>
+      <li><strong>From:</strong> business name, ABN, address, phone, email.</li>
+      <li><strong>To:</strong> client name, and their ABN for invoices of $1,000 or more.</li>
+      <li><strong>Lines:</strong> description, quantity, rate, line total.</li>
+      <li><strong>Totals:</strong> subtotal, GST, total due.</li>
+      <li><strong>Payment:</strong> BSB, account number, account name, terms such as "14 days".</li>
+    </ul>
+    <p>If your ABN is new, the guide to <a href="/blog/how-to-invoice-with-an-abn/">invoicing with an ABN</a> covers where it goes and what it changes.</p>
+
+    <h2>How do I make an invoice template in Word?</h2>
+    <p>Lay out your business details at the top, insert a 4-column table for the line items, and save the file as a Word Template (.dotx) rather than a normal document. The .dotx step is what stops you saving over last month's invoice.</p>
+    <ol>
+      <li><strong>Header:</strong> type "Tax Invoice" large at the top, then your business name and ABN. Put the invoice number and dates in a right-aligned block.</li>
+      <li><strong>Line items:</strong> Insert → Table, 4 columns (Description, Qty, Rate, Amount) and 6 to 8 rows. Add three rows underneath for Subtotal, GST and Total.</li>
+      <li><strong>Optional maths:</strong> click in an Amount cell, go to Table Layout → Formula and enter <code>=PRODUCT(LEFT)</code>. In the Subtotal cell use <code>=SUM(ABOVE)</code>. Set the number format to <code>$#,##0.00</code>.</li>
+      <li><strong>Save as template:</strong> File → Save As → Word Template (*.dotx).</li>
+    </ol>
+    <p>The catch with Word formulas: they're fields, and fields don't recalculate when you change a number. You have to select the table and press F9 every time. Change a quantity, forget F9, and the PDF goes out with the old total. That's why most people with a Word invoice end up typing the totals by hand, which is fine at five invoices a year and a risk at fifty.</p>
+
+    <h2>How do I calculate GST in an Excel invoice template?</h2>
+    <p>Work out each line total, add them for a subtotal, then calculate GST on the subtotal with <code>=ROUND(D8*0.1,2)</code> and add it on. If your prices already include GST, don't add anything: the GST inside the total is <code>=ROUND(D8/11,2)</code>.</p>
+    <p>Here's a worked example with descriptions in column A, quantity in B, rate in C and amount in D:</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Cell</th><th>Contents</th><th>Formula</th><th>Shows</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Row 5</td><td>Labour, 6 hrs × $95.00</td><td><code>=ROUND(B5*C5,2)</code></td><td>$570.00</td></tr>
+          <tr><td>Row 6</td><td>LED downlights, 8 × $23.30</td><td><code>=ROUND(B6*C6,2)</code></td><td>$186.40</td></tr>
+          <tr><td>Row 7</td><td>Call-out fee, 1 × $80.00</td><td><code>=ROUND(B7*C7,2)</code></td><td>$80.00</td></tr>
+          <tr><td>D8</td><td>Subtotal</td><td><code>=SUM(D5:D7)</code></td><td>$836.40</td></tr>
+          <tr><td>D9</td><td>GST (10%)</td><td><code>=ROUND(D8*0.1,2)</code></td><td>$83.64</td></tr>
+          <tr class="hl"><td>D10</td><td>Total due</td><td><code>=D8+D9</code></td><td>$920.04</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Check it backwards: $920.04 ÷ 11 = $83.64, the same GST. That's the GST-inclusive formula. If you quote prices that already include GST, enter them as-is, make the total <code>=D8</code>, and show the GST line as <code>=ROUND(D8/11,2)</code> with the label "GST included". Never take 10% of a GST-inclusive total: on $920.04 that gives $92.00, which overstates the GST by $8.36. Our guide on <a href="/blog/do-i-add-gst-to-my-invoice/">whether to add GST to your invoice</a> covers when each method applies.</p>
+    <p><strong>Mixed GST-free and taxable items:</strong> add a column E with "Y" for taxable lines and "N" for GST-free lines, then change D9 to <code>=ROUND(SUMIF(E5:E7,"Y",D5:D7)*0.1,2)</code>. Only the taxable lines attract GST, and the invoice still needs to show which items are taxable.</p>
+    <p>All of these formulas work unchanged in Google Sheets.</p>
+
+    <h2>Why does my spreadsheet GST look a cent out?</h2>
+    <p>Because a cell formatted to two decimals still holds the unrounded number underneath. If you calculate GST per line without <code>ROUND</code>, each line displays rounded but the total adds the hidden decimals, so the column on the page doesn't add up.</p>
+    <p>Example: three taxable lines of $12.45, $8.35 and $3.15. Their GST is $1.245, $0.835 and $0.315. Formatted to two decimals they display as $1.25, $0.84 and $0.32, which a client adds to $2.41. The total cell sums the real values, $2.395, and displays $2.40. Both figures are legitimate under the ATO's two <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" target="_blank" rel="noopener">GST rounding rules</a>, but an invoice whose GST column doesn't add up invites a query. Wrap every GST and line calculation in <code>ROUND(…,2)</code> so what's printed is what's added.</p>
+
+    <h2>How do I number invoices in a spreadsheet?</h2>
+    <p>Keep a second sheet called Register with one row per invoice: number, date, client, total, date paid. Your next number is <code>=MAX(Register!A:A)+1</code>, and <code>="INV-"&amp;TEXT(MAX(Register!A:A)+1,"0000")</code> displays it as INV-0042.</p>
+    <p>The register also gives you the thing a folder of PDFs never does: a list of what's unpaid. Filter the "date paid" column for blanks and you have your overdue list. The rules for the numbers themselves (unique, sequential, never reused) are in our guide on <a href="/blog/how-to-number-invoices/">how to number invoices</a>. The weak point is that the register is only as good as your habit of filling it in. Skip one row and the next invoice reuses a number.</p>
+
+    <h2>What are the common Word and Excel invoice mistakes?</h2>
+    <p>The expensive ones are overwriting the previous invoice, formulas that silently stop including a row, GST on the wrong base, and no saved copy of what the client actually received.</p>
+    <ul>
+      <li><strong>Overwriting the last invoice.</strong> You open last month's file, change the client and press Save. The old invoice is gone. Fix: a .dotx or .xltx template, which always opens as a new, untitled copy.</li>
+      <li><strong>Inserted rows outside the SUM range.</strong> Add a fourth line below row 7 and <code>=SUM(D5:D7)</code> ignores it. Fix: insert new rows <em>between</em> existing line rows so the range expands, then check the subtotal by eye.</li>
+      <li><strong>Hard-typed totals.</strong> Someone overtypes a formula with a number to "fix" a cent. Next invoice, that cell no longer calculates. Fix: lock formula cells (Review → Protect Sheet).</li>
+      <li><strong>10% of a GST-inclusive price.</strong> Covered above: divide by 11 instead.</li>
+      <li><strong>"Tax Invoice" when you're not registered.</strong> The ATO says businesses that aren't registered for GST shouldn't use those words. Keep two templates, or our <a href="/tax-invoice-template/">tax invoice template</a> for the registered version.</li>
+      <li><strong>No record copy.</strong> The file is edited after sending, so what's on your computer isn't what the client got. Save every sent invoice as a PDF named with the number (INV-0042 Smith.pdf). The ATO generally requires business records to be kept for five years.</li>
+    </ul>
+    <div class="callout"><p>Most of these mistakes come from the same root: a spreadsheet makes a document but doesn't remember anything. If you're re-typing the same clients and keeping the paid/unpaid list by hand, <a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=blog-invoice-template-word-excel-midpost" target="_blank" rel="noopener">InvoiceSonic</a> (from the same team) saves clients and GST settings on its free plan. Pro (A$19/month) adds unlimited invoices, cloud history of everything you've sent, overdue tracking and automatic reminders at 7, 14 and 30 days.</p></div>
+
+    <h2>Is there a better invoice template for tradies than Word or Excel?</h2>
+    <p>For tradies the problem with a generic Word or Excel file is the line items: labour by the hour, materials, call-out fees and GST all need to sit on one invoice. A trade-specific template has those lines ready, so you change numbers instead of rebuilding a table on site.</p>
+    <p>Electricians searching for an Excel template usually want labour, parts and call-out in separate lines with GST on top. The <a href="/electrician-invoice-template-australia/">electrician invoice template</a> is set up that way and works on a phone. Plumbers who'd otherwise use Word can do the same with the <a href="/plumber-invoice-template-australia/">plumber invoice template</a>, which keeps materials and labour separate. Both download as PDF and calculate the GST for you. For more formats side by side, see our <a href="/blog/invoice-examples-australia/">Australian invoice examples</a>.</p>
+
+    <h2>When should I switch from a Word or Excel template?</h2>
+    <p>Switch when the template starts costing time or money: you re-type the same client details every week, you check a folder to work out the next invoice number, or you find out an invoice is overdue weeks after it was due. A spreadsheet is a fine way to make an invoice and a poor way to run invoicing.</p>
+    <p>A useful test: count how long one invoice takes from opening the file to the PDF landing in the client's inbox. If it's more than a couple of minutes and you invoice weekly, a generator saves that time every week. The <a href="/invoice-template-australia/">free invoice templates for Australian businesses</a> on our site do the GST maths, include the ABN and tax invoice fields, and download a PDF without a Word or Excel licence. The step-by-step version is in <a href="/blog/how-to-write-an-invoice/">how to write an invoice</a>.</p>
+
+    <h2>The short answer</h2>
+    <p>Word works if you check the maths yourself; save it as a .dotx. Excel works well with <code>=ROUND(D8*0.1,2)</code> for GST-exclusive prices, <code>=ROUND(D8/11,2)</code> for GST-inclusive ones, a register sheet for numbers and a PDF copy of everything you send. Google Sheets is the same as Excel and free. If you'd rather not build or maintain any of it, use an online template and keep the time.</p>
+    <p>Once you're invoicing every week, the template is the easy part. Remembering clients, tracking what's paid and chasing what isn't is where spreadsheets fall over. <a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=blog-invoice-template-word-excel-closing" target="_blank" rel="noopener">InvoiceSonic</a> handles that: reusable clients on the free plan, and on Pro (A$19/month, 7-day trial) recurring invoices, open tracking and automatic payment reminders.</p>
+
+    <p><small>This article is general information, not tax advice. For your circumstances, check the <a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/tax-invoices" target="_blank" rel="noopener">ATO's tax invoices page</a> or a registered tax agent.</small></p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Is a Word invoice template acceptable in Australia?</summary><p>Yes. The ATO cares about what the invoice shows, not the software that made it. A Word invoice is valid as long as it has the required details: your name and ABN, the date, a description, the price, and if you're registered for GST, the words 'Tax Invoice' and the GST amount.</p></details>
+      <details><summary>What is the Excel formula for 10% GST?</summary><p>For GST-exclusive prices use =ROUND(D8*0.1,2), where D8 is the subtotal. For GST-inclusive prices the GST already in the price is =ROUND(D8/11,2). On an $836.40 subtotal the first gives $83.64 and a total of $920.04; $920.04 divided by 11 is $83.64.</p></details>
+      <details><summary>How do I stop overwriting my last invoice in Word or Excel?</summary><p>Save the blank layout as a template file (.dotx in Word, .xltx in Excel). Opening a template creates a new untitled copy, so you can't save over the original or last month's invoice by accident. Then save each finished invoice as a PDF named with its invoice number.</p></details>
+      <details><summary>Can Google Docs calculate invoice totals?</summary><p>No. Google Docs tables don't calculate, so totals and GST are typed by hand. Google Sheets uses the same formulas as Excel, including =ROUND(D8*0.1,2) for GST, and can download a PDF from File, Download.</p></details>
+      <details><summary>When should I stop using a spreadsheet for invoices?</summary><p>When you're re-typing the same client details every week, losing track of which invoice number is next, or chasing payments from memory. A spreadsheet makes a document; it doesn't remember clients, track what's paid or send reminders.</p></details>
+    </div>
+
+    <div class="cta-band">
+      <h2>Skip the spreadsheet setup</h2>
+      <p>ABN, GST at 10% or "includes GST", PDF download. Free, no signup, no Word or Excel licence.</p>
+      <a class="btn btn-primary" href="/invoice-template-australia/" style="text-decoration:none; display:inline-flex; width:auto; padding:14px 34px;">Open the Australian invoice template</a>
+    </div>
+  </article>
+
+  <nav class="post-nav" aria-label="More posts">
+    <a href="/blog/how-to-number-invoices/">← How to number invoices</a>
+    <a href="/blog/do-i-add-gst-to-my-invoice/">Next: Do I add GST to my invoice? →</a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div>
+        <a class="brand" href="/">invoice-generator<span class="tld">.com.au</span></a>
+        <p class="fineprint">The free invoice generator that respects your time and your data. No signup, no watermarks, no ads — your invoice data never leaves your browser.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="/">Invoice Generator</a></li>
+            <li><a href="/invoice-generator-australia/">Invoice Generator Australia</a></li>
+            <li><a href="/gst-calculator/">GST Calculator</a></li>
+            <li><a href="/quote-generator/">Quote Generator</a></li>
+            <li><a href="/receipt-generator/">Receipt Generator</a></li>
+            <li><a href="https://invoicesonic.com/?utm_source=invoice-generator.com.au&amp;utm_medium=referral&amp;utm_campaign=footer" target="_blank" rel="noopener">InvoiceSonic — invoicing app</a></li>
+          </ul>
+        </div>
+        <div><h3>Templates</h3><ul>
+            <li><a href="/abn-invoice-template/">ABN Invoice Template</a></li>
+            <li><a href="/no-gst-invoice-template/">No-GST Invoice Template</a></li>
+            <li><a href="/tax-invoice-template/">Tax Invoice Template</a></li>
+            <li><a href="/sole-trader-invoice-generator/">Sole Trader Invoice</a></li>
+            <li><a href="/tradie-invoice-template-australia/">Tradie Invoice Template</a></li>
+            <li><a href="/invoice-template-australia/">All Invoice Templates</a></li>
+          </ul></div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About us</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/blog.js?v=1" defer></script>
+</body>
+</html>
